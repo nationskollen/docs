@@ -1,36 +1,17 @@
 # API/Server Documentation
 ## Development setup
-
-```zsh
-$ npm install
-$ npm run setup
-$ npm run dev
-```
-
-The API will now be available at `localhost:3333`.
-
-### Commands
-```zsh
-$ npm run setup   - Run database migrations and seeders
-$ npm run build   - Build the application for production
-$ npm run start   - Start thes server in production mode
-$ npm run dev     - Start the server in development mode
-$ npm run lint    - Run ESLint on all source files
-$ npm run format  - Format all source files using Prettier
-$ npm run test    - Run all tests defined in `test/`
-```
+[Setup guide](https://github.com/dsp-krabby/server/tree/main#development)
 
 ### Frameworks and Database
 At this moment, the lightweight `SQlite3` database is in use for development.
-Since the framework [adonisjs](https://adonisjs.com/) is used to create the
+Since the framework [AdonisJS](https://adonisjs.com/) is used to create the
 backend functionality for the database. All dependencies and setup will be made
 automatically after running `npm install`.
 `npm run setup` will run database migrations and seed the database with test
 data (only in development mode).
 
-When needed to migrate to another database, for instance `MongoDB`, it is
-possible to do so within `AdonisJS`, for how this is done, check out [AdonisJS
-docs](https://adonisjs.com/docs/4.1/migrations).
+Switching databases is really easy and is explained in the [AdonisJS
+docs](https://preview.adonisjs.com/guides/database/setup)
 
 ### Data validators
 The api has its own validator that can be found in
@@ -51,7 +32,7 @@ public schema = schema.create({
 
 We validate so that the password is in between the interval `8` - `256`.
 As well using the rule `rules.email()` so that the input coming is in the
-correct format. For e.g., `example@examples.se`.
+correct format, e.g. `example@examples.se`.
 
 ### Testing
 
@@ -66,12 +47,11 @@ the API is omitted from the endpoints below.
 POST /api/v1/users/login
 ```
 
-#### Request data
+#### Parameters
 - `email` - string, required
 - `password` - string, required
 
-#### Response data
-##### Success
+#### Response - Success
 ```json
 {
     "type": "bearer",
@@ -79,10 +59,11 @@ POST /api/v1/users/login
 }
 ```
 
-##### Error
+#### Response - Error
 Based on the `email` and `password` request contents, the `errors` array might
 contain different messages. E.g. specifying an email that does not follow the
-format of an email will return another validator error.
+format of an email will return another validator error. The array might contain
+more than one error message.
 
 ```json
 {
@@ -101,11 +82,10 @@ format of an email will return another validator error.
 GET /api/v1/nations
 ```
 
-#### Request data
+#### Parameters
 None
 
-#### Response data
-##### Success
+#### Response - Success
 A list of all available nations and information about them.
 
 ```json
@@ -127,21 +107,20 @@ A list of all available nations and information about them.
 ]
 ```
 
----
-
-##### Error
+#### Response - Error
 None
+
+---
 
 ### Fetch a single nation
 ```
 GET /api/v1/nations/:oid
 ```
 
-#### Request data
+#### Parameters
 None
 
-#### Response data
-##### Success
+#### Response - Success
 A single nation and its data.
 
 ```json
@@ -161,7 +140,7 @@ A single nation and its data.
 }
 ```
 
-##### Error
+#### Response - Error
 E.g. if trying to fetch a student nation with `oid` 200 that does not exist:
 
 ```json
@@ -188,7 +167,7 @@ the `Authorization` header:
 Authorization: Bearer <token>
 ```
 
-#### Request data
+#### Parameters
 The request data can contain any (and multiple) of the following properties:
 
 - `name`
@@ -217,8 +196,7 @@ E.g:
 
 will update the name and accent color of the nation.
 
-#### Response data
-##### Success
+#### Response - Success
 ```json
 {
     "status": 200,
@@ -227,7 +205,7 @@ will update the name and accent color of the nation.
 }
 ```
 
-##### Error
+#### Response - Error
 E.g. if trying to fetch a student nation with `oid` 200 that does not exist:
 
 ```json
@@ -238,7 +216,7 @@ E.g. if trying to fetch a student nation with `oid` 200 that does not exist:
 }
 ```
 
-If trying to fetch a student nation with `oid` 200 without specifying a
+If trying to update a student nation with `oid` 200 without specifying a
 valid token:
 
 ```json
