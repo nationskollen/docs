@@ -40,12 +40,26 @@ correct format, e.g. `example@examples.se`.
 All endpoints expect and return data in JSON format. Note that the base URL of
 the API is omitted from the endpoints below.
 
+Authentication is done using Bearer tokens by setting the `Authorization` header:
+```
+Authorization: Bearer <token>
+```
+
+Some routes requires authorization and the Bearer token **must** be set for the
+request to be valid. Different users have different permissions. These
+permissions are called scopes and the required scopes are defined in the
+"Authentication" section of each endpoint.
+
 ---
 
 ### Login
+
 ```
 POST /api/v1/users/login
 ```
+
+#### Authentication
+None
 
 #### Parameters
 - `email` - string, required
@@ -78,9 +92,13 @@ more than one error message.
 ---
 
 ### Fetch all nations
+
 ```
 GET /api/v1/nations
 ```
+
+#### Authentication
+None
 
 #### Parameters
 None
@@ -113,9 +131,13 @@ None
 ---
 
 ### Fetch a single nation
+
 ```
 GET /api/v1/nations/:oid
 ```
+
+#### Authentication
+None
 
 #### Parameters
 None
@@ -159,13 +181,10 @@ E.g. if trying to fetch a student nation with `oid` 200 that does not exist:
 ```
 PUT /api/v1/nations/:oid
 ```
-#### Authentication
-This endpoint is protected and requires a valid token. Tokens **must** be set in
-the `Authorization` header:
 
-```
-Authorization: Bearer <token>
-```
+#### Authentication
+Allowed scopes:
+- `admin`
 
 #### Parameters
 The request data can contain any (and multiple) of the following properties:
@@ -201,7 +220,7 @@ will update the name and accent color of the nation.
 {
     "status": 200,
     "success": true,
-    "message": "Successfully updated student nation with id: <oid>"
+    "message": "<success message>"
 }
 ```
 
@@ -212,7 +231,73 @@ E.g. if trying to fetch a student nation with `oid` 200 that does not exist:
 {
     "status": 404,
     "success": false,
-    "message": "Could not find student nation with id: 200"
+    "message": "<error message>"
+}
+```
+
+If trying to update a student nation with `oid` 200 without specifying a
+valid token:
+
+```json
+{
+    "errors": [
+        {
+            "message": "E_UNAUTHORIZED_ACCESS: Unauthorized access"
+        }
+    ]
+}
+```
+
+---
+
+### Update nation activity
+**TODO: Update documentation when the endpoint has been implemented fully**
+
+```
+PUT /api/v1/nations/:oid/activity
+```
+
+#### Authentication
+Allowed scopes:
+- `staff`
+- `admin`
+
+#### Parameters
+The request data can contain any (and multiple) of the following properties:
+
+- `estimated_people_count`
+- `activity_level`
+
+The data specified will be merged with the existing data in the database,
+overwriting the values specified in the request.
+
+E.g:
+```json
+{
+    "estimated_people_count": 100,
+    "activity_level": 2
+}
+```
+
+will update the estimated people count and activity level of the nation.
+
+#### Response - Success
+```json
+{
+    "status": 200,
+    "success": true,
+    "message": "<success message>"
+}
+```
+
+#### Response - Error
+E.g. if trying to fetch a student nation with `oid` 200 that does not exist:
+
+```json
+{
+    "status": 404,
+    "success": false,
+    "message": "<error message>"
 }
 ```
 
