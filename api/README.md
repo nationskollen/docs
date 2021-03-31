@@ -13,33 +13,11 @@ data (only in development mode).
 Switching databases is really easy and is explained in the [AdonisJS
 docs](https://preview.adonisjs.com/guides/database/setup)
 
-### Data validators
-The api has its own validator that can be found in
-`app/Validators/UserValidator.js`.
-
-At this moment, the following rules are set:
-```ts
-public schema = schema.create({
-    email: schema.string({}, [
-        rules.email(),
-    ]),
-    password: schema.string({}, [
-        rules.minLength(8),
-        rules.maxLength(256),
-    ]),
-})
-```
-
-We validate so that the password is in between the interval `8` - `256`.
-As well using the rule `rules.email()` so that the input coming is in the
-correct format, e.g. `example@examples.se`.
-
-### Testing
-
 ## Endpoints
-All endpoints expect and return data in JSON format. Note that the base URL of
-the API is omitted from the endpoints below.
+### Content type
+All endpoints expect and return data in JSON format.
 
+### Authentication
 Authentication is done using Bearer tokens by setting the `Authorization` header:
 ```
 Authorization: Bearer <token>
@@ -50,6 +28,50 @@ request to be valid. Different users have different permissions. These
 permissions are called scopes and the required scopes are defined in the
 "Authentication" section of each endpoint.
 
+> **Note that users may only modify the nation that they are part of**.
+
+If the specified token is not valid or does not have permisson to perform the
+action, the following data will be received in the response:
+
+```json
+{
+    "errors": [
+        {
+            "message": "E_UNAUTHORIZED_ACCESS: Unauthorized access"
+        }
+    ]
+}
+```
+
+### Standard error response format
+The format for all kind of request errors is as follows:
+
+```json
+{
+    "errors": [
+        {
+            "message": "<validation error>"
+        }
+    ]
+}
+```
+
+Response data validation errors are more specific as to what causes the error:
+
+```json
+{
+    "errors": [
+        {
+            "rule": "<rule>",
+            "field": "<parameter>",
+            "message": "<validation error>"
+        }
+    ]
+}
+```
+
+The `errors` array can contain an arbitrary amount of errors.
+
 ---
 
 ### Login
@@ -58,64 +80,50 @@ permissions are called scopes and the required scopes are defined in the
 POST /api/v1/users/login
 ```
 
-#### Authentication
+#### Authentication scopes
 None
 
 #### Parameters
 - `email` - string, required
 - `password` - string, required
 
-#### Response - Success
+#### Success response
 ```json
 {
     "type": "bearer",
     "token": "<opaque token>",
-    "scope": "<scope>"
+    "scope": "<admin|staff|none>",
+    "oid": <oid>
 }
 ```
-The scopes that are valid at this moment are:
 
-- Admin
-- Staff
-- None
+`oid` is the id of the nation that this user is a part of (as staff or admin).
+If the value is `-1`, it means that the user does not belong to any nation and
+can not make authenticated requests.
 
-#### Response - Error
-Based on the `email` and `password` request contents, the `errors` array might
-contain different messages. E.g. specifying an email that does not follow the
-format of an email will return another validator error. The array might contain
-more than one error message.
-
-```json
-{
-    "errors": [
-        {
-            "message": "Invalid user credentials"
-        }
-    ]
-}
-```
+#### Error status codes
+- `422` - Response data vaidation error
 
 ---
 
 ### Fetch all nations
-
 ```
 GET /api/v1/nations
 ```
 
-#### Authentication
+#### Authentication scopes
 None
 
 #### Parameters
 None
 
-#### Response - Success
-A list of all available nations and information about them.
+#### Success response
+A list of all available nations and information about them. An empty array will
+be returned if no nations are available.
 
 ```json
 [
     {
-        "id": 3,
         "oid": 405,
         "name": "Norrlands nation",
         "short_name": "Norrlands",
@@ -131,29 +139,27 @@ A list of all available nations and information about them.
 ]
 ```
 
-#### Response - Error
+#### Error status codes
 None
 
 ---
 
 ### Fetch a single nation
-
 ```
 GET /api/v1/nations/:oid
 ```
 
-#### Authentication
+#### Authentication scopes
 None
 
 #### Parameters
 None
 
-#### Response - Success
+#### Success response
 A single nation and its data.
 
 ```json
 {
-    "id": 3,
     "oid": 405,
     "name": "Norrlands nation",
     "short_name": "Norrlands",
@@ -168,28 +174,17 @@ A single nation and its data.
 }
 ```
 
-#### Response - Error
-E.g. if trying to fetch a student nation with `oid` 200 that does not exist:
-
-```json
-{
-    "status": 404,
-    "success": false,
-    "message": "Could not find student nation with id: 200"
-}
-```
+#### Error status codes
+- `404` - Nation not found
 
 ---
 
 ### Update a nation
-**TODO: Update documentation when the endpoint has been implemented fully**
-
 ```
 PUT /api/v1/nations/:oid
 ```
 
-#### Authentication
-Allowed scopes:
+#### Authentication scopes
 - `admin`
 
 #### Parameters
@@ -200,28 +195,12 @@ The request data can contain any (and multiple) of the following properties:
 - `description`
 - `address`
 - `max_capacity`
-- `estimated_people_count`
-- `activity_level`
-- `icon_img_src`
-- `cover_img_src`
 - `accent_color`
-
-Note that `id` and `oid` can not be updated.
 
 The data specified will be merged with the existing data in the database,
 overwriting the values specified in the request.
 
-E.g:
-```json
-{
-    "name": "New name",
-    "accent_color": "#abcabc"
-}
-```
-
-will update the name and accent color of the nation.
-
-#### Response - Success
+#### Success response
 ```json
 {
     "status": 200,
@@ -230,92 +209,37 @@ will update the name and accent color of the nation.
 }
 ```
 
-#### Response - Error
-E.g. if trying to fetch a student nation with `oid` 200 that does not exist:
-
-```json
-{
-    "status": 404,
-    "success": false,
-    "message": "<error message>"
-}
-```
-
-If trying to update a student nation with `oid` 200 without specifying a
-valid token:
-
-```json
-{
-    "errors": [
-        {
-            "message": "E_UNAUTHORIZED_ACCESS: Unauthorized access"
-        }
-    ]
-}
-```
+#### Error status codes
+- `401` - Authorization error
+- `404` - Nation not found
+- `422` - Response data vaidation error
 
 ---
 
 ### Update nation activity
-**TODO: Update documentation when the endpoint has been implemented fully**
-
 ```
 PUT /api/v1/nations/:oid/activity
 ```
 
-#### Authentication
-Allowed scopes:
+#### Authentication scopes
 - `staff`
 - `admin`
 
 #### Parameters
-The request data can contain any (and multiple) of the following properties:
+- `change` - signed number, required
 
-- `estimated_people_count`
-- `activity_level`
+The resulting people count will be clamped between `0` and the max capacity of
+the nation.
 
-The data specified will be merged with the existing data in the database,
-overwriting the values specified in the request.
-
-E.g:
+#### Success response
 ```json
 {
-    "estimated_people_count": 100,
-    "activity_level": 2
+    "estimated_people_count": <count>,
+    "activity_level": <level>
 }
 ```
 
-will update the estimated people count and activity level of the nation.
-
-#### Response - Success
-```json
-{
-    "status": 200,
-    "success": true,
-    "message": "<success message>"
-}
-```
-
-#### Response - Error
-E.g. if trying to fetch a student nation with `oid` 200 that does not exist:
-
-```json
-{
-    "status": 404,
-    "success": false,
-    "message": "<error message>"
-}
-```
-
-If trying to update a student nation with `oid` 200 without specifying a
-valid token:
-
-```json
-{
-    "errors": [
-        {
-            "message": "E_UNAUTHORIZED_ACCESS: Unauthorized access"
-        }
-    ]
-}
-```
+#### Error status codes
+- `401` - Authorization error
+- `404` - Nation not found
+- `422` - Response data vaidation error
