@@ -70,8 +70,14 @@ None
 {
     "type": "bearer",
     "token": "<opaque token>"
+    "scope": "<scope>"
 }
 ```
+The scopes that are valid at this moment are:
+
+- Admin
+- Staff
+- None
 
 #### Response - Error
 Based on the `email` and `password` request contents, the `errors` array might
