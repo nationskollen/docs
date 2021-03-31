@@ -69,7 +69,7 @@ None
 ```json
 {
     "type": "bearer",
-    "token": "<opaque token>"
+    "token": "<opaque token>",
     "scope": "<scope>"
 }
 ```
