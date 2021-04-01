@@ -34,7 +34,37 @@ We validate so that the password is in between the interval `8` - `256`.
 As well using the rule `rules.email()` so that the input coming is in the
 correct format, e.g. `example@examples.se`.
 
+
 ### Testing
+
+## Activity levels
+Activity levels update dynamically depending on how much estimated people are
+reported into the system. As well depending on the max capacity that is set for
+a given Nation.
+
+The following activity levels are present in the system:
+
+- Closed
+  - Can only be initiated by a `PUT /nations/:oid/close`
+- Low
+- Medium
+- High
+- VeryHigh
+- Full
+
+Example:
+```ts
+// max_capacity is 200
+// estimated_people_count for this example is 100
+// activity level is 0.5 => Medium (+- High, Low)
+
+{
+	"change": 80
+}
+
+// estimated_people_count becomes 180
+// activity rises up to VeryHigh
+```
 
 ## Endpoints
 All endpoints expect and return data in JSON format. Note that the base URL of
