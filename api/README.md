@@ -13,6 +13,60 @@ data (only in development mode).
 Switching databases is really easy and is explained in the [AdonisJS
 docs](https://preview.adonisjs.com/guides/database/setup)
 
+### Data validators
+The api has its own validator that can be found in
+`app/Validators/UserValidator.js`.
+
+At this moment, the following rules are set:
+```ts
+public schema = schema.create({
+    email: schema.string({}, [
+        rules.email(),
+    ]),
+    password: schema.string({}, [
+        rules.minLength(8),
+        rules.maxLength(256),
+    ]),
+})
+```
+
+We validate so that the password is in between the interval `8` - `256`.
+As well using the rule `rules.email()` so that the input coming is in the
+correct format, e.g. `example@examples.se`.
+
+
+### Testing
+
+## Activity levels
+Activity levels update dynamically depending on how much estimated people are
+reported into the system. As well depending on the max capacity that is set for
+a given Nation.
+
+The following activity levels are present in the system:
+
+- Closed : 0
+  - Can only be initiated by a `PUT /nations/:oid/close`
+- Low : 1
+- Medium : 2
+- High : 3
+- VeryHigh : 4
+- Full : 5
+
+Example:
+```ts
+// max_capacity is 200
+// estimated_people_count for this example is 100
+// activity level is 0.5 => Medium (+- High, Low)
+
+{
+	"change": 80
+}
+
+// estimated_people_count becomes 180
+// activity rises up to VeryHigh
+```
+
+
 ## Endpoints
 ### Content type
 All endpoints expect and return data in JSON format.
