@@ -44,13 +44,13 @@ a given Nation.
 
 The following activity levels are present in the system:
 
-- Closed
+- Closed : 0
   - Can only be initiated by a `PUT /nations/:oid/close`
-- Low
-- Medium
-- High
-- VeryHigh
-- Full
+- Low : 1
+- Medium : 2
+- High : 3
+- VeryHigh : 4
+- Full : 5
 
 Example:
 ```ts
