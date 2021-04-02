@@ -13,61 +13,7 @@ data (only in development mode).
 Switching databases is really easy and is explained in the [AdonisJS
 docs](https://preview.adonisjs.com/guides/database/setup)
 
-### Data validators
-The api has its own validator that can be found in
-`app/Validators/UserValidator.js`.
-
-At this moment, the following rules are set:
-```ts
-public schema = schema.create({
-    email: schema.string({}, [
-        rules.email(),
-    ]),
-    password: schema.string({}, [
-        rules.minLength(8),
-        rules.maxLength(256),
-    ]),
-})
-```
-
-We validate so that the password is in between the interval `8` - `256`.
-As well using the rule `rules.email()` so that the input coming is in the
-correct format, e.g. `example@examples.se`.
-
-
-### Testing
-
-## Activity levels
-Activity levels update dynamically depending on how much estimated people are
-reported into the system. As well depending on the max capacity that is set for
-a given Nation.
-
-The following activity levels are present in the system:
-
-- Closed : 0
-  - Can only be initiated by a `PUT /nations/:oid/close`
-- Low : 1
-- Medium : 2
-- High : 3
-- VeryHigh : 4
-- Full : 5
-
-Example:
-```ts
-// max_capacity is 200
-// estimated_people_count for this example is 100
-// activity level is 0.5 => Medium (+- High, Low)
-
-{
-	"change": 80
-}
-
-// estimated_people_count becomes 180
-// activity rises up to VeryHigh
-```
-
-
-## Endpoints
+## Endpoint information
 ### Content type
 All endpoints expect and return data in JSON format.
 
@@ -126,7 +72,54 @@ Response data validation errors are more specific as to what causes the error:
 
 The `errors` array can contain an arbitrary amount of errors.
 
+### Activity levels
+Activity levels update dynamically depending on how much estimated people are
+reported into the system. As well depending on the max capacity that is set for
+a given Nation.
+
+The following activity levels are present in the system:
+
+- `0` - Closed
+  * Can only be initiated by a `PUT /nations/:oid/close`
+- `1` - Low
+- `2` - Medium
+- `3` - High
+- `4` - Very high
+- `5` - Max capacity
+
+Example:
+```ts
+// max_capacity is 200
+// estimated_people_count for this example is 100
+// activity level is 0.5 => Medium (+- High, Low)
+
+{
+	"change": 80
+}
+
+// estimated_people_count becomes 180
+// activity rises up to VeryHigh
+```
+
+### Opening hour types
+There are two different types of opening hours:
+- `0` - `Default` - Regular opening hour on e.g. Monday
+- `1` - `Exception` - Holidays, etc.
+
+
+### Weekday enum
+Each day is represented by a number:
+- `0` - Monday
+- `1` - Tuesday
+- `2` - Wednesday
+- `3` - Thursday
+- `4` - Friday
+- `5` - Saturday
+- `6` - Sunday
+
 ---
+
+## Endpoints
 
 ### Login
 
@@ -188,7 +181,22 @@ be returned if no nations are available.
         "activity_level": 3,
         "icon_img_src": null,
         "cover_img_src": null,
-        "accent_color": "#e20e17"
+        "accent_color": "#e20e17",
+        "openingHours":[
+            {
+                "id": 1,
+                "oid": 400,
+                "type": 0,
+                "day": 0,
+                "day_special": null,
+                "day_special_date": null,
+                "open": "10:30",
+                "close": "20:00",
+                "is_open": true
+            },
+            ...
+        ],
+        "opening_hour_exceptions": [...]
     }
 ]
 ```
@@ -224,7 +232,22 @@ A single nation and its data.
     "activity_level": 3,
     "icon_img_src": null,
     "cover_img_src": null,
-    "accent_color": "#e20e17"
+    "accent_color": "#e20e17",
+    "openingHours":[
+        {
+            "id": 1,
+            "oid": 400,
+            "type": 0,
+            "day": 0,
+            "day_special": null,
+            "day_special_date": null,
+            "open": "10:30",
+            "close": "20:00",
+            "is_open": true
+        },
+        ...
+    ],
+    "opening_hour_exceptions": [...]
 }
 ```
 
@@ -255,11 +278,36 @@ The data specified will be merged with the existing data in the database,
 overwriting the values specified in the request.
 
 #### Success response
+The nation containing the updated data.
+
 ```json
 {
-    "status": 200,
-    "success": true,
-    "message": "<success message>"
+    "oid": 405,
+    "name": "Norrlands nation",
+    "short_name": "Norrlands",
+    "description": "Välkommen till världens största studentnation!..",
+    "address": "Västra Ågatan 13, 75309 Uppsala",
+    "max_capacity": 150,
+    "estimated_people_count": 130,
+    "activity_level": 3,
+    "icon_img_src": null,
+    "cover_img_src": null,
+    "accent_color": "#e20e17",
+    "openingHours":[
+        {
+            "id": 1,
+            "oid": 400,
+            "type": 0,
+            "day": 0,
+            "day_special": null,
+            "day_special_date": null,
+            "open": "10:30",
+            "close": "20:00",
+            "is_open": true
+        },
+        ...
+    ],
+    "opening_hour_exceptions": [...]
 }
 ```
 
@@ -282,10 +330,11 @@ PUT /api/v1/nations/:oid/activity
 #### Parameters
 - `change` - signed number, required
 
+
+#### Success response
 The resulting people count will be clamped between `0` and the max capacity of
 the nation.
 
-#### Success response
 ```json
 {
     "estimated_people_count": <count>,
@@ -297,3 +346,114 @@ the nation.
 - `401` - Authorization error
 - `404` - Nation not found
 - `422` - Response data vaidation error
+
+---
+
+### Create opening hour
+```
+POST /api/v1/nations/:oid/opening_hours
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+##### `Default`
+- `type` - `0`, required
+- `day` - `0-6`, required
+- `is_open` - boolean, required
+- `open` - time in format `HH:mm`, required if `is_open = true`
+- `close` - time in format `HH:mm`, required if `is_open = true`
+
+##### `Exception`
+- `type` - `1`, required
+- `day_special` - string (e.g. "Christmas Eve"), required
+- `day_special_date` - date in format `d/M` (e.g. "24/12"), required
+- `is_open` - boolean, required
+- `open` - time in format `HH:mm`, required if `is_open = true`
+- `close` - time in format `HH:mm`, required if `is_open = true`
+
+#### Success response
+The created opening hour.
+
+```json
+{
+    "id": 1,
+    "oid": 400,
+    "type": 0,
+    "day": 0,
+    "day_special": null,
+    "day_special_date": null,
+    "open": "10:30",
+    "close": "20:00",
+    "is_open": true
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Nation not found
+- `422` - Response data vaidation error
+
+---
+
+### Update opening hour
+```
+PUT /api/v1/nations/:oid/opening_hours/:id
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+The request data can contain the following parameters:
+
+- `type` - `0`/`1`
+- `day` - `0-6`, required if `type = 0`
+- `day_special` - string (e.g. "Christmas Eve"), required if `type = 1`
+- `day_special_date` - date in format `d/M` (e.g. "24/12"), required if `type = 1`
+- `is_open` - boolean
+- `open` - time in format `HH:mm`, required if `is_open = true`
+- `close` - time in format `HH:mm`, required if `is_open = true`
+
+#### Success response
+The opening hour containing the updated data.
+
+```json
+{
+    "id": 1,
+    "oid": 400,
+    "type": 0,
+    "day": 0,
+    "day_special": null,
+    "day_special_date": null,
+    "open": "10:30",
+    "close": "20:00",
+    "is_open": true
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Nation not found, opening hour not found
+- `422` - Response data vaidation error
+
+---
+
+### Delete an opening hour
+```
+DELETE /api/v1/nations/:oid/opening_hours/:id
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+None
+
+#### Success response
+None
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Nation not found, opening hour not found
