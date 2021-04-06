@@ -80,7 +80,7 @@ a given Nation.
 The following activity levels are present in the system:
 
 - `0` - Closed
-  * Can only be initiated by a `PUT /nations/:oid/close`
+  * Can only be initiated by a `PUT /locations/:id/close`
 - `1` - Low
 - `2` - Medium
 - `3` - High
@@ -149,7 +149,7 @@ If the value is `-1`, it means that the user does not belong to any nation and
 can not make authenticated requests.
 
 #### Error status codes
-- `422` - Response data vaidation error
+- `422` - Response data validation error
 
 ---
 
@@ -171,32 +171,28 @@ be returned if no nations are available.
 ```json
 [
     {
-        "oid": 405,
-        "name": "Norrlands nation",
-        "short_name": "Norrlands",
-        "description": "Välkommen till världens största studentnation!..",
-        "address": "Västra Ågatan 13, 75309 Uppsala",
-        "max_capacity": 150,
-        "estimated_people_count": 130,
-        "activity_level": 3,
-        "icon_img_src": null,
-        "cover_img_src": null,
-        "accent_color": "#e20e17",
-        "openingHours":[
+        "oid": 400,
+        "name": "Västmanlands-Dala nation",
+        "short_name": "V-dala",
+        "description": "Enim et doloribus et sed quis exercitationem veritatis...",
+        "icon_img_src": "https://cdn.fakercloud.com/avatars/russoedu_128.jpg",
+        "cover_img_src": "http://placeimg.com/640/480",
+        "accent_color": "#0053a4",
+        "locations": [
             {
                 "id": 1,
-                "oid": 400,
-                "type": 0,
-                "day": 0,
-                "day_special": null,
-                "day_special_date": null,
-                "open": "10:30",
-                "close": "20:00",
-                "is_open": true
+                "nation_id": 400,
+                "name": "Bartell LLC",
+                "description": "Cupiditate qui rem. Praesentium alias quaerat et in r...",
+                "address": "386 Ransom Rest",
+                "max_capacity": 719,
+                "estimated_people_count": 95,
+                "activity_level": 2,
+                "is_open": false,
+                "cover_img_src": null
             },
             ...
-        ],
-        "opening_hour_exceptions": [...]
+        ]
     }
 ]
 ```
@@ -222,32 +218,28 @@ A single nation and its data.
 
 ```json
 {
-    "oid": 405,
-    "name": "Norrlands nation",
-    "short_name": "Norrlands",
-    "description": "Välkommen till världens största studentnation!..",
-    "address": "Västra Ågatan 13, 75309 Uppsala",
-    "max_capacity": 150,
-    "estimated_people_count": 130,
-    "activity_level": 3,
-    "icon_img_src": null,
-    "cover_img_src": null,
-    "accent_color": "#e20e17",
-    "openingHours":[
+    "oid": 400,
+    "name": "Västmanlands-Dala nation",
+    "short_name": "V-dala",
+    "description": "Enim et doloribus et sed quis exercitationem veritatis...",
+    "icon_img_src": "https://cdn.fakercloud.com/avatars/russoedu_128.jpg",
+    "cover_img_src": "http://placeimg.com/640/480",
+    "accent_color": "#0053a4",
+    "locations": [
         {
             "id": 1,
-            "oid": 400,
-            "type": 0,
-            "day": 0,
-            "day_special": null,
-            "day_special_date": null,
-            "open": "10:30",
-            "close": "20:00",
-            "is_open": true
+            "nation_id": 400,
+            "name": "Bartell LLC",
+            "description": "Cupiditate qui rem. Praesentium alias quaerat et in r...",
+            "address": "386 Ransom Rest",
+            "max_capacity": 719,
+            "estimated_people_count": 95,
+            "activity_level": 2,
+            "is_open": false,
+            "cover_img_src": null
         },
         ...
-    ],
-    "opening_hour_exceptions": [...]
+    ]
 }
 ```
 
@@ -271,7 +263,6 @@ The request data can contain any (and multiple) of the following properties:
 - `short_name`
 - `description`
 - `address`
-- `max_capacity`
 - `accent_color`
 
 The data specified will be merged with the existing data in the database,
@@ -282,45 +273,41 @@ The nation containing the updated data.
 
 ```json
 {
-    "oid": 405,
-    "name": "Norrlands nation",
-    "short_name": "Norrlands",
-    "description": "Välkommen till världens största studentnation!..",
-    "address": "Västra Ågatan 13, 75309 Uppsala",
-    "max_capacity": 150,
-    "estimated_people_count": 130,
-    "activity_level": 3,
-    "icon_img_src": null,
-    "cover_img_src": null,
-    "accent_color": "#e20e17",
-    "openingHours":[
+    "oid": 400,
+    "name": "Västmanlands-Dala nation",
+    "short_name": "V-dala",
+    "description": "Enim et doloribus et sed quis exercitationem veritatis...",
+    "icon_img_src": "https://cdn.fakercloud.com/avatars/russoedu_128.jpg",
+    "cover_img_src": "http://placeimg.com/640/480",
+    "accent_color": "#0053a4",
+    "locations": [
         {
             "id": 1,
-            "oid": 400,
-            "type": 0,
-            "day": 0,
-            "day_special": null,
-            "day_special_date": null,
-            "open": "10:30",
-            "close": "20:00",
-            "is_open": true
+            "nation_id": 400,
+            "name": "Bartell LLC",
+            "description": "Cupiditate qui rem. Praesentium alias quaerat et in r...",
+            "address": "386 Ransom Rest",
+            "max_capacity": 719,
+            "estimated_people_count": 95,
+            "activity_level": 2,
+            "is_open": false,
+            "cover_img_src": null
         },
         ...
-    ],
-    "opening_hour_exceptions": [...]
+    ]
 }
 ```
 
 #### Error status codes
 - `401` - Authorization error
 - `404` - Nation not found
-- `422` - Response data vaidation error
+- `422` - Response data validation error
 
 ---
 
-### Update nation activity
+### Update location activity
 ```
-PUT /api/v1/nations/:oid/activity
+PUT /api/v1/locations/:id/activity
 ```
 
 #### Authentication scopes
@@ -330,46 +317,204 @@ PUT /api/v1/nations/:oid/activity
 #### Parameters
 - `change` - signed number, required
 
-
 #### Success response
 The resulting people count will be clamped between `0` and the max capacity of
 the nation.
 
 ```json
 {
-    "estimated_people_count": <count>,
-    "activity_level": <level>
+    "id": 1,
+    "nation_id": 400,
+    "name": "Location name",
+    "description": "In voluptatem molestias accusamus...",
+    "address": "254 Cydney Shoals",
+    "max_capacity": 127,
+    "estimated_people_count": 127,
+    "activity_level": 4,
+    "is_open": false,
+    "cover_img_src": null,
+    "opening_hours": [
+        {
+            "id": 1,
+            "location_id": 1,
+            "type": 0,
+            "day": 4,
+            "day_special": null,
+            "day_special_date": null,
+            "open": "05:12",
+            "close": "22:51",
+            "is_open": true
+        },
+        ...
+    ],
+    "opening_hour_exceptions": [
+        {
+            "id": 3,
+            "location_id": 1,
+            "type": 1,
+            "day": null,
+            "day_special": "et",
+            "day_special_date": "15/6",
+            "open": "03:54",
+            "close": "16:33",
+            "is_open": false
+        },
+        ...
+    ]
 }
 ```
 
 #### Error status codes
 - `401` - Authorization error
-- `404` - Nation not found
-- `422` - Response data vaidation error
+- `404` - Location not found
+- `422` - Response data validation error
 
 ---
 
-### Create opening hour
+### Mark location as open
 ```
-POST /api/v1/nations/:oid/opening_hours
+PUT /api/v1/locations/:id/open
+```
+
+#### Authentication scopes
+- `staff`
+- `admin`
+
+#### Parameters
+None
+
+#### Success response
+The updated location.
+
+```json
+{
+    "id": 1,
+    "nation_id": 400,
+    "name": "Location name",
+    "description": "In voluptatem molestias accusamus...",
+    "address": "254 Cydney Shoals",
+    "max_capacity": 127,
+    "estimated_people_count": 0,
+    "activity_level": 1,
+    "is_open": true,
+    "cover_img_src": null,
+    "opening_hours": [
+        {
+            "id": 1,
+            "location_id": 1,
+            "type": 0,
+            "day": 4,
+            "day_special": null,
+            "day_special_date": null,
+            "open": "05:12",
+            "close": "22:51",
+            "is_open": true
+        },
+        ...
+    ],
+    "opening_hour_exceptions": [
+        {
+            "id": 3,
+            "location_id": 1,
+            "type": 1,
+            "day": null,
+            "day_special": "et",
+            "day_special_date": "15/6",
+            "open": "03:54",
+            "close": "16:33",
+            "is_open": false
+        },
+        ...
+    ]
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
+
+---
+
+### Mark location as closed
+```
+PUT /api/v1/locations/:id/close
+```
+
+#### Authentication scopes
+- `staff`
+- `admin`
+
+#### Parameters
+None
+
+#### Success response
+The updated location.
+
+```json
+{
+    "id": 1,
+    "nation_id": 400,
+    "name": "Location name",
+    "description": "In voluptatem molestias accusamus...",
+    "address": "254 Cydney Shoals",
+    "max_capacity": 127,
+    "estimated_people_count": 0,
+    "activity_level": 0,
+    "is_open": false,
+    "cover_img_src": null,
+    "opening_hours": [
+        {
+            "id": 1,
+            "location_id": 1,
+            "type": 0,
+            "day": 4,
+            "day_special": null,
+            "day_special_date": null,
+            "open": "05:12",
+            "close": "22:51",
+            "is_open": true
+        },
+        ...
+    ],
+    "opening_hour_exceptions": [
+        {
+            "id": 3,
+            "location_id": 1,
+            "type": 1,
+            "day": null,
+            "day_special": "et",
+            "day_special_date": "15/6",
+            "open": "03:54",
+            "close": "16:33",
+            "is_open": false
+        },
+        ...
+    ]
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
+
+---
+
+### Create location opening hour
+```
+POST /api/v1/locations/:id/hours
 ```
 
 #### Authentication scopes
 - `admin`
 
 #### Parameters
-##### `Default`
-- `type` - `0`, required
-- `day` - `0-6`, required
-- `is_open` - boolean, required
-- `open` - time in format `HH:mm`, required if `is_open = true`
-- `close` - time in format `HH:mm`, required if `is_open = true`
+The request data can contain the following parameters:
 
-##### `Exception`
-- `type` - `1`, required
-- `day_special` - string (e.g. "Christmas Eve"), required
-- `day_special_date` - date in format `d/M` (e.g. "24/12"), required
-- `is_open` - boolean, required
+- `type` - `0`/`1`
+- `day` - `0-6`, required if `type = 0`
+- `day_special` - string (e.g. "Christmas Eve"), required if `type = 1`
+- `day_special_date` - date in format `d/M` (e.g. "24/12"), required if `type = 1`
+- `is_open` - boolean
 - `open` - time in format `HH:mm`, required if `is_open = true`
 - `close` - time in format `HH:mm`, required if `is_open = true`
 
@@ -378,28 +523,26 @@ The created opening hour.
 
 ```json
 {
-    "id": 1,
-    "oid": 400,
     "type": 0,
     "day": 0,
-    "day_special": null,
-    "day_special_date": null,
-    "open": "10:30",
+    "open": "10:00",
     "close": "20:00",
-    "is_open": true
+    "is_open": true,
+    "location_id": 1,
+    "id": 28
 }
 ```
 
 #### Error status codes
 - `401` - Authorization error
-- `404` - Nation not found
-- `422` - Response data vaidation error
+- `404` - Location not found
+- `422` - Response data validation error
 
 ---
 
-### Update opening hour
+### Update location opening hour
 ```
-PUT /api/v1/nations/:oid/opening_hours/:id
+PUT /api/v1/locations/:id/hours/:id
 ```
 
 #### Authentication scopes
@@ -435,14 +578,14 @@ The opening hour containing the updated data.
 
 #### Error status codes
 - `401` - Authorization error
-- `404` - Nation not found, opening hour not found
-- `422` - Response data vaidation error
+- `404` - Location not found, opening hour not found
+- `422` - Response data validation error
 
 ---
 
 ### Delete an opening hour
 ```
-DELETE /api/v1/nations/:oid/opening_hours/:id
+DELETE /api/v1/locations/:id/hours/:id
 ```
 
 #### Authentication scopes
@@ -456,4 +599,4 @@ None
 
 #### Error status codes
 - `401` - Authorization error
-- `404` - Nation not found, opening hour not found
+- `404` - Location not found, opening hour not found
