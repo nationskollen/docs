@@ -319,6 +319,232 @@ The nation containing the updated data.
 
 ---
 
+### Fetch all locations
+```
+GET /api/v1/nations/:oid/locations
+```
+
+#### Authentication scopes
+None
+
+#### Parameters
+None
+
+#### Success response
+A list of all locations for the nation and information about them. An empty array will
+be returned if no locations are available.
+
+```json
+[
+    {
+        "id": 1,
+        "nation_id": 400,
+        "name": "Brown, Ferry and Rohan",
+        "description": "Ut nemo id ut minus quia sed nesciunt eveniet ipsum...",
+        "address": "535 Kemmer Inlet",
+        "max_capacity": 112,
+        "estimated_people_count": 19,
+        "activity_level": 1,
+        "is_open": true,
+        "cover_img_src": null,
+        "opening_hours": [
+            {
+                "id": 1,
+                "location_id": 1,
+                "type": 0,
+                "day": 4,
+                "day_special": null,
+                "day_special_date": null,
+                "open": "03:35",
+                "close": "18:31",
+                "is_open": true
+            },
+            ...
+        ],
+        "opening_hour_exceptions": [
+            {
+                "id": 3,
+                "location_id": 1,
+                "type": 1,
+                "day": null,
+                "day_special": "et",
+                "day_special_date": "22/7",
+                "open": "05:26",
+                "close": "17:59",
+                "is_open": true
+            },
+            ...
+        ]
+    },
+]
+```
+
+#### Error status codes
+- `404` - Nation not found
+
+---
+
+### Fetch a single location
+```
+GET /api/v1/nations/:oid/locations/:id
+```
+
+#### Authentication scopes
+None
+
+#### Parameters
+None
+
+#### Success response
+A single location and its data.
+
+```json
+{
+    "id": 1,
+    "nation_id": 400,
+    "name": "Brown, Ferry and Rohan",
+    "description": "Ut nemo id ut minus quia sed nesciunt eveniet ipsum...",
+    "address": "535 Kemmer Inlet",
+    "max_capacity": 112,
+    "estimated_people_count": 19,
+    "activity_level": 1,
+    "is_open": true,
+    "cover_img_src": null,
+    "opening_hours": [
+        {
+            "id": 1,
+            "location_id": 1,
+            "type": 0,
+            "day": 4,
+            "day_special": null,
+            "day_special_date": null,
+            "open": "03:35",
+            "close": "18:31",
+            "is_open": true
+        },
+        ...
+    ],
+    "opening_hour_exceptions": [
+    {
+        "id": 3,
+        "location_id": 1,
+        "type": 1,
+            "day": null,
+            "day_special": "et",
+            "day_special_date": "22/7",
+            "open": "05:26",
+            "close": "17:59",
+            "is_open": true
+        },
+        ...
+    ]
+},
+```
+
+#### Error status codes
+- `404` - Nation not found, Location not found
+
+---
+
+### Create location
+```
+POST /api/v1/nations/:oid/locations
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+The request data can contain the following parameters:
+
+- `name`: The name for the location that is visible on a nation page
+- `description`: A description on this location
+- `address`: The address for this location
+- `max_capacity`: The maximum amount of people allowed/specified at given location
+
+#### Success response
+The created location.
+
+E.g.:
+```json
+{
+    "name": "New Location Name",
+    "description": "New Description",
+    "address": "Adress streee 24B",
+    "max_capacity": 250,
+    "nation_id": 400,
+    "id": 21
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
+- `422` - Response data validation error
+
+---
+
+### Update a location
+```
+PUT /api/v1/nations/:oid/locations/:id
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+The request data can contain the following parameters:
+
+- `name`: The name for the location that is visible on a nation page
+- `description`: A description on this location
+- `address`: The address for this location
+- `max_capacity`: The maximum amount of people allowed/specified at given location
+
+### Success response
+
+E.g. updating the max_capacity to 250:
+```json
+{
+    "id": 1,
+    "nation_id": 400,
+    "name": "Location name",
+    "description": "In voluptatem molestias accusamus...",
+    "address": "254 Cydney Shoals",
+--->"max_capacity": 250,
+    "estimated_people_count": 0,
+    "activity_level": 0,
+    "is_open": false,
+    "cover_img_src": null
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
+- `422` - Response data validation error
+
+---
+
+### Delete location
+```
+DELETE /api/v1/nations/:oid/locations/:id
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+None
+
+#### Success response
+None
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
+
+---
+
 ### Update location activity
 ```
 PUT /api/v1/locations/:id/activity
@@ -346,35 +572,7 @@ the nation.
     "estimated_people_count": 127,
     "activity_level": 4,
     "is_open": false,
-    "cover_img_src": null,
-    "opening_hours": [
-        {
-            "id": 1,
-            "location_id": 1,
-            "type": 0,
-            "day": 4,
-            "day_special": null,
-            "day_special_date": null,
-            "open": "05:12",
-            "close": "22:51",
-            "is_open": true
-        },
-        ...
-    ],
-    "opening_hour_exceptions": [
-        {
-            "id": 3,
-            "location_id": 1,
-            "type": 1,
-            "day": null,
-            "day_special": "et",
-            "day_special_date": "15/6",
-            "open": "03:54",
-            "close": "16:33",
-            "is_open": false
-        },
-        ...
-    ]
+    "cover_img_src": null
 }
 ```
 
@@ -411,35 +609,7 @@ The updated location.
     "estimated_people_count": 0,
     "activity_level": 1,
     "is_open": true,
-    "cover_img_src": null,
-    "opening_hours": [
-        {
-            "id": 1,
-            "location_id": 1,
-            "type": 0,
-            "day": 4,
-            "day_special": null,
-            "day_special_date": null,
-            "open": "05:12",
-            "close": "22:51",
-            "is_open": true
-        },
-        ...
-    ],
-    "opening_hour_exceptions": [
-        {
-            "id": 3,
-            "location_id": 1,
-            "type": 1,
-            "day": null,
-            "day_special": "et",
-            "day_special_date": "15/6",
-            "open": "03:54",
-            "close": "16:33",
-            "is_open": false
-        },
-        ...
-    ]
+    "cover_img_src": null
 }
 ```
 
@@ -475,35 +645,7 @@ The updated location.
     "estimated_people_count": 0,
     "activity_level": 0,
     "is_open": false,
-    "cover_img_src": null,
-    "opening_hours": [
-        {
-            "id": 1,
-            "location_id": 1,
-            "type": 0,
-            "day": 4,
-            "day_special": null,
-            "day_special_date": null,
-            "open": "05:12",
-            "close": "22:51",
-            "is_open": true
-        },
-        ...
-    ],
-    "opening_hour_exceptions": [
-        {
-            "id": 3,
-            "location_id": 1,
-            "type": 1,
-            "day": null,
-            "day_special": "et",
-            "day_special_date": "15/6",
-            "open": "03:54",
-            "close": "16:33",
-            "is_open": false
-        },
-        ...
-    ]
+    "cover_img_src": null
 }
 ```
 
@@ -512,6 +654,96 @@ The updated location.
 - `404` - Location not found
 
 ---
+
+### Fetch all opening hours
+```
+GET /api/v1/locations/:id/hours
+```
+
+#### Authentication scopes
+None
+
+#### Parameters
+None
+
+#### Success response
+A list of all opening hours for the location.
+An empty array will be returned if no opening hours are available.
+
+```json
+[
+    {
+        "id": 1,
+        "location_id": 1,
+        "type": 0,
+        "day": 4,
+        "day_special": null,
+        "day_special_date": null,
+        "open": "03:35",
+        "close": "18:31",
+        "is_open": true
+    },
+    {
+        "id": 2,
+        "location_id": 1,
+        "type": 0,
+        "day": 6,
+        "day_special": null,
+        "day_special_date": null,
+        "open": "09:46",
+        "close": "22:29",
+        "is_open": false
+    },
+    {
+        "id": 3,
+        "location_id": 1,
+        "type": 1,
+        "day": null,
+        "day_special": "et",
+        "day_special_date": "22/7",
+        "open": "05:26",
+        "close": "17:59",
+        "is_open": true
+    }
+]
+```
+
+#### Error status codes
+- `404` - Location not found
+
+---
+
+### Fetch a single opening hour
+```
+GET /api/v1/locations/:id/hours/:id
+```
+
+#### Authentication scopes
+None
+
+#### Parameters
+None
+
+#### Success response
+A single opening hour and its data.
+
+```json
+{
+    "id": 1,
+    "location_id": 1,
+    "type": 0,
+    "day": 4,
+    "day_special": null,
+    "day_special_date": null,
+    "open": "03:35",
+    "close": "18:31",
+    "is_open": true
+}
+```
+
+#### Error status codes
+- `404` - Location not found, Opening hour not found
+
 
 ### Create location opening hour
 ```
@@ -617,116 +849,203 @@ None
 
 ---
 
-### Create location 
+### Fetch all menus
 ```
-POST /api/v1/nations/:oid/locations
+GET /api/v1/locations/:id/menus
 ```
 
 #### Authentication scopes
-- `admin`
+None
 
 #### Parameters
-The request data can contain the following parameters:
-
-- `name`: The name for the location that is visible on a nation page
-- `description`: A description on this location
-- `address`: The address for this location
-- `max_capacity`: The maximum amount of people allowed/specified at given location
+None
 
 #### Success response
-The created location.
+A list of all menus for the location along with the items on the menu.
+An empty array will be returned if no menus are available.
 
-For e.g.:
 ```json
-{
-    "name": "New Location Name",
-    "description": "New Description",
-    "address": "Adress streee 24B",
-    "max_capacity": 250,
-    "nation_id": 400,
-    "id": 21
-}
+[
+    {
+        "id": 1,
+        "oid": 400,
+        "location_id": 1,
+        "name": "new menu",
+        "hidden": false,
+        "items": [
+            {
+                "id": 1,
+                "menu_id": 1,
+                "name": "Tasty Steel Bike",
+                "description": "Boston's most advanced compression wear...",
+                "price": 759,
+                "cover_img_src": "http://placeimg.com/640/480/food",
+                "hidden": false,
+                "created_at": "2021-04-07T16:11:56.000+02:00",
+                "updated_at": "2021-04-07T16:11:56.000+02:00"
+            },
+            {
+                "id": 2,
+                "menu_id": 1,
+                "name": "Rustic Rubber Chips",
+                "description": "The automobile layout consists of a front-engine...",
+                "price": 702,
+                "cover_img_src": "http://placeimg.com/640/480/food",
+                "hidden": false,
+                "created_at": "2021-04-07T16:11:56.000+02:00",
+                "updated_at": "2021-04-07T16:11:56.000+02:00"
+            },
+            {
+                "id": 3,
+                "menu_id": 1,
+                "name": "Incredible Metal Ball",
+                "description": "The Football Is Good For Training And Recreational...",
+                "price": 281,
+                "cover_img_src": "http://placeimg.com/640/480/food",
+                "hidden": false,
+                "created_at": "2021-04-07T16:11:56.000+02:00",
+                "updated_at": "2021-04-07T16:11:56.000+02:00"
+            }
+        ]
+    }
+]
 ```
 
 #### Error status codes
-- `401` - Authorization error
 - `404` - Location not found
-- `422` - Response data validation error
 
 ---
 
-### Update a location
+### Fetch a single menu
 ```
-PUT /api/v1/nations/:oid/locations/:id
+GET /api/v1/locations/:id/menus/:id
 ```
 
 #### Authentication scopes
-- `admin`
+None
 
 #### Parameters
-The request data can contain the following parameters:
+None
 
-- `name`: The name for the location that is visible on a nation page
-- `description`: A description on this location
-- `address`: The address for this location
-- `max_capacity`: The maximum amount of people allowed/specified at given location
+#### Success response
+A single nation and its data.
 
-### Success response 
-
-For e.g. updating the max_capacity to 250:
 ```json
 {
     "id": 1,
-    "nation_id": 400,
-    "name": "Location name",
-    "description": "In voluptatem molestias accusamus...",
-    "address": "254 Cydney Shoals",
---->"max_capacity": 250,
-    "estimated_people_count": 0,
-    "activity_level": 0,
-    "is_open": false,
-    "cover_img_src": null,
-    "opening_hours": [
+    "oid": 400,
+    "location_id": 1,
+    "name": "new menu",
+    "hidden": false,
+    "items": [
         {
             "id": 1,
-            "location_id": 1,
-            "type": 0,
-            "day": 4,
-            "day_special": null,
-            "day_special_date": null,
-            "open": "05:12",
-            "close": "22:51",
-            "is_open": true
+            "menu_id": 1,
+            "name": "Tasty Steel Bike",
+            "description": "Boston's most advanced compression wear...",
+            "price": 759,
+            "cover_img_src": "http://placeimg.com/640/480/food",
+            "hidden": false,
+            "created_at": "2021-04-07T16:11:56.000+02:00",
+            "updated_at": "2021-04-07T16:11:56.000+02:00"
         },
-        ...
-    ],
-    "opening_hour_exceptions": [
+        {
+            "id": 2,
+            "menu_id": 1,
+            "name": "Rustic Rubber Chips",
+            "description": "The automobile layout consists of a front-engine...",
+            "price": 702,
+            "cover_img_src": "http://placeimg.com/640/480/food",
+            "hidden": false,
+            "created_at": "2021-04-07T16:11:56.000+02:00",
+            "updated_at": "2021-04-07T16:11:56.000+02:00"
+        },
         {
             "id": 3,
-            "location_id": 1,
-            "type": 1,
-            "day": null,
-            "day_special": "et",
-            "day_special_date": "15/6",
-            "open": "03:54",
-            "close": "16:33",
-            "is_open": false
-        },
-        ...
+            "menu_id": 1,
+            "name": "Incredible Metal Ball",
+            "description": "The Football Is Good For Training And Recreational...",
+            "price": 281,
+            "cover_img_src": "http://placeimg.com/640/480/food",
+            "hidden": false,
+            "created_at": "2021-04-07T16:11:56.000+02:00",
+            "updated_at": "2021-04-07T16:11:56.000+02:00"
+        }
     ]
 }
 ```
 
 #### Error status codes
+- `404` - Location not found, Menu not found
+
+---
+
+### Create menu
+```
+POST /api/v1/locations/:id/menus
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+- `name` - string, required
+- `hidden` - boolean, required
+
+#### Success response
+The created opening hour.
+
+```json
+{
+    "name": "new menu",
+    "hidden": false
+}
+```
+
+#### Error status codes
 - `401` - Authorization error
 - `404` - Location not found
 - `422` - Response data validation error
 
 ---
 
-### Delete location
+### Update menu
 ```
-DELETE /api/v1/nations/:oid/locations/:id
+PUT /api/v1/locations/:id/menus/:id
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+The request data can contain the following parameters:
+
+- `name` - string
+- `hidden` - boolean
+
+#### Success response
+The opening hour containing the updated data.
+
+```json
+{
+    "id": 1,
+    "oid": 400,
+    "location_id": 1,
+    "name": "new menu",
+    "hidden": false
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found, menu not found
+- `422` - Response data validation error
+
+---
+
+### Delete menu
+```
+DELETE /api/v1/locations/:id/menus/:id
 ```
 
 #### Authentication scopes
@@ -740,4 +1059,5 @@ None
 
 #### Error status codes
 - `401` - Authorization error
-- `404` - Location not found
+- `404` - Location not found, menu hour not found
+
