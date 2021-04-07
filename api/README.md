@@ -119,6 +119,20 @@ Each day is represented by a number:
 
 ---
 
+### Locations
+The locations are provided for each nation that can only be created, updated and
+deleted by a nation admin.
+
+The fields that are alowed to be updated are:
+
+- `name`: The name for the location that is visible on a nation page
+- `description`: A description on this location
+- `address`: The address for this location
+- `max_capacity`: The maximum amount of people allowed/specified at given
+  location
+
+Each location has its own activity_level that is update dynamically.
+
 ## Endpoints
 
 ### Login
@@ -600,3 +614,126 @@ None
 #### Error status codes
 - `401` - Authorization error
 - `404` - Location not found, opening hour not found
+
+### Create location 
+```
+POST /api/v1/nations/:oid/locations
+```
+            .set('Authorization', 'Bearer ' + nation.token)
+            .send(locationData)
+            .expect(200)
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+The request data can contain the following parameters:
+
+- `name`: The name for the location that is visible on a nation page
+- `description`: A description on this location
+- `address`: The address for this location
+- `max_capacity`: The maximum amount of people allowed/specified at given location
+
+#### Success response
+The created location.
+
+```json
+{
+    "name": <string>,
+    "description": <string>,
+    "address": <string>,
+    "max_capacity": <number>,
+    "nation_id": <oid provided in the POST>,
+    "id": <generated id>
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
+- `422` - Response data validation error
+
+---
+
+### Update a location
+```
+PUT /api/v1/nations/:oid/locations/:id
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+The request data can contain the following parameters:
+
+- `name`: The name for the location that is visible on a nation page
+- `description`: A description on this location
+- `address`: The address for this location
+- `max_capacity`: The maximum amount of people allowed/specified at given location
+
+### Success response 
+
+For e.g.:
+```json
+{
+  "id": 1,
+  "nation_id": 400,
+  "name": "O'Keefe - Stiedemann",
+  "description": "Eius accusamus reiciendis est laboriosam facere. Molestias ab praesentium repellendus qui. Consequatur esse occaecati repudiandae.",
+  "address": "67995 Lee Islands",
+  "max_capacity": 300,
+  "estimated_people_count": 232,
+  "activity_level": 4,
+  "is_open": false,
+  "cover_img_src": null,
+  "opening_hours": [
+    {
+      "id": 1,
+      "location_id": 1,
+      "type": 0,
+      "day": 0,
+      "day_special": null,
+      "day_special_date": null,
+      "open": "07:07",
+      "close": "23:58",
+      "is_open": true
+    }],
+  "opening_hour_exceptions": [
+    {
+      "id": 3,
+      "location_id": 1,
+      "type": 1,
+      "day": null,
+      "day_special": "ut",
+      "day_special_date": "12/1",
+      "open": "05:06",
+      "close": "23:32",
+      "is_open": false
+    }
+  ]
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
+- `422` - Response data validation error
+
+---
+
+### Delete location
+```
+DELETE /api/v1/nations/:oid/locations/:id
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+None
+
+#### Success response
+None
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
