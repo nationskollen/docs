@@ -119,6 +119,20 @@ Each day is represented by a number:
 
 ---
 
+### Locations
+The locations are provided for each nation that can only be created, updated and
+deleted by a nation admin.
+
+The fields that are alowed to be updated are:
+
+- `name`: The name for the location that is visible on a nation page
+- `description`: A description on this location
+- `address`: The address for this location
+- `max_capacity`: The maximum amount of people allowed/specified at given
+  location
+
+Each location has its own activity_level that is update dynamically.
+
 ## Endpoints
 
 ### Login
@@ -600,3 +614,130 @@ None
 #### Error status codes
 - `401` - Authorization error
 - `404` - Location not found, opening hour not found
+
+---
+
+### Create location 
+```
+POST /api/v1/nations/:oid/locations
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+The request data can contain the following parameters:
+
+- `name`: The name for the location that is visible on a nation page
+- `description`: A description on this location
+- `address`: The address for this location
+- `max_capacity`: The maximum amount of people allowed/specified at given location
+
+#### Success response
+The created location.
+
+For e.g.:
+```json
+{
+    "name": "New Location Name",
+    "description": "New Description",
+    "address": "Adress streee 24B",
+    "max_capacity": 250,
+    "nation_id": 400,
+    "id": 21
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
+- `422` - Response data validation error
+
+---
+
+### Update a location
+```
+PUT /api/v1/nations/:oid/locations/:id
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+The request data can contain the following parameters:
+
+- `name`: The name for the location that is visible on a nation page
+- `description`: A description on this location
+- `address`: The address for this location
+- `max_capacity`: The maximum amount of people allowed/specified at given location
+
+### Success response 
+
+For e.g. updating the max_capacity to 250:
+```json
+{
+    "id": 1,
+    "nation_id": 400,
+    "name": "Location name",
+    "description": "In voluptatem molestias accusamus...",
+    "address": "254 Cydney Shoals",
+--->"max_capacity": 250,
+    "estimated_people_count": 0,
+    "activity_level": 0,
+    "is_open": false,
+    "cover_img_src": null,
+    "opening_hours": [
+        {
+            "id": 1,
+            "location_id": 1,
+            "type": 0,
+            "day": 4,
+            "day_special": null,
+            "day_special_date": null,
+            "open": "05:12",
+            "close": "22:51",
+            "is_open": true
+        },
+        ...
+    ],
+    "opening_hour_exceptions": [
+        {
+            "id": 3,
+            "location_id": 1,
+            "type": 1,
+            "day": null,
+            "day_special": "et",
+            "day_special_date": "15/6",
+            "open": "03:54",
+            "close": "16:33",
+            "is_open": false
+        },
+        ...
+    ]
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
+- `422` - Response data validation error
+
+---
+
+### Delete location
+```
+DELETE /api/v1/nations/:oid/locations/:id
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+None
+
+#### Success response
+None
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
