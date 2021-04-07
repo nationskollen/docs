@@ -615,13 +615,13 @@ None
 - `401` - Authorization error
 - `404` - Location not found, opening hour not found
 
+---
+
 ### Create location 
 ```
 POST /api/v1/nations/:oid/locations
 ```
-            .set('Authorization', 'Bearer ' + nation.token)
-            .send(locationData)
-            .expect(200)
+
 #### Authentication scopes
 - `admin`
 
@@ -636,14 +636,15 @@ The request data can contain the following parameters:
 #### Success response
 The created location.
 
+For e.g.:
 ```json
 {
-    "name": <string>,
-    "description": <string>,
-    "address": <string>,
-    "max_capacity": <number>,
-    "nation_id": <oid provided in the POST>,
-    "id": <generated id>
+    "name": "New Location Name",
+    "description": "New Description",
+    "address": "Adress streee 24B",
+    "max_capacity": 250,
+    "nation_id": 400,
+    "id": 21
 }
 ```
 
@@ -672,44 +673,47 @@ The request data can contain the following parameters:
 
 ### Success response 
 
-For e.g.:
+For e.g. updating the max_capacity to 250:
 ```json
 {
-  "id": 1,
-  "nation_id": 400,
-  "name": "O'Keefe - Stiedemann",
-  "description": "Eius accusamus reiciendis est laboriosam facere. Molestias ab praesentium repellendus qui. Consequatur esse occaecati repudiandae.",
-  "address": "67995 Lee Islands",
-  "max_capacity": 300,
-  "estimated_people_count": 232,
-  "activity_level": 4,
-  "is_open": false,
-  "cover_img_src": null,
-  "opening_hours": [
-    {
-      "id": 1,
-      "location_id": 1,
-      "type": 0,
-      "day": 0,
-      "day_special": null,
-      "day_special_date": null,
-      "open": "07:07",
-      "close": "23:58",
-      "is_open": true
-    }],
-  "opening_hour_exceptions": [
-    {
-      "id": 3,
-      "location_id": 1,
-      "type": 1,
-      "day": null,
-      "day_special": "ut",
-      "day_special_date": "12/1",
-      "open": "05:06",
-      "close": "23:32",
-      "is_open": false
-    }
-  ]
+    "id": 1,
+    "nation_id": 400,
+    "name": "Location name",
+    "description": "In voluptatem molestias accusamus...",
+    "address": "254 Cydney Shoals",
+--->"max_capacity": 250,
+    "estimated_people_count": 0,
+    "activity_level": 0,
+    "is_open": false,
+    "cover_img_src": null,
+    "opening_hours": [
+        {
+            "id": 1,
+            "location_id": 1,
+            "type": 0,
+            "day": 4,
+            "day_special": null,
+            "day_special_date": null,
+            "open": "05:12",
+            "close": "22:51",
+            "is_open": true
+        },
+        ...
+    ],
+    "opening_hour_exceptions": [
+        {
+            "id": 3,
+            "location_id": 1,
+            "type": 1,
+            "day": null,
+            "day_special": "et",
+            "day_special_date": "15/6",
+            "open": "03:54",
+            "close": "16:33",
+            "is_open": false
+        },
+        ...
+    ]
 }
 ```
 
