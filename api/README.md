@@ -297,7 +297,7 @@ The nation containing the updated data.
 
 ---
 
-### Upload cover image and icon
+### Upload nation cover image and/or icon
 ```
 POST /api/v1/nations/:oid/upload
 ```
@@ -667,7 +667,7 @@ The updated location.
 
 ---
 
-### Upload cover image
+### Upload location cover image
 ```
 POST /api/v1/locations/:id/upload
 ```
@@ -1111,3 +1111,225 @@ None
 - `401` - Authorization error
 - `404` - Location not found, menu hour not found
 
+---
+
+### Fetch all menu items
+```
+GET /api/v1/menus/:id/items
+```
+
+#### Authentication scopes
+None
+
+#### Parameters
+None
+
+#### Success response
+A list of all menu items for the menu.
+An empty array will be returned if no menu items are available.
+
+```json
+[
+    {
+        "id": 1,
+        "menu_id": 1,
+        "name": "Ergonomic Soft Sausages",
+        "description": "New range of formal shirts are designed keeping you in mind...",
+        "price": 492,
+        "cover_img_src": "http:/0.0.0.0:3333/http:/placeimg.com/640/480/food",
+        "hidden": false,
+        "created_at": "2021-04-08T15:23:50.000+02:00",
+        "updated_at": "2021-04-08T15:23:50.000+02:00"
+    },
+    {
+        "id": 2,
+        "menu_id": 1,
+        "name": "Handmade Frozen Pizza",
+        "description": "The automobile layout consists of a front-engine design, with...",
+        "price": 657,
+        "cover_img_src": "http:/0.0.0.0:3333/http:/placeimg.com/640/480/food",
+        "hidden": false,
+        "created_at": "2021-04-08T15:23:50.000+02:00",
+        "updated_at": "2021-04-08T15:23:50.000+02:00"
+    },
+    {
+        "id": 3,
+        "menu_id": 1,
+        "name": "Fantastic Steel Chicken",
+        "description": "The beautiful range of Apple Naturalé that has an exciting mix...",
+        "price": 874,
+        "cover_img_src": "http:/0.0.0.0:3333/http:/placeimg.com/640/480/food",
+        "hidden": false,
+        "created_at": "2021-04-08T15:23:50.000+02:00",
+        "updated_at": "2021-04-08T15:23:50.000+02:00"
+    }
+]
+```
+
+#### Error status codes
+- `404` - Menu not found
+
+---
+
+### Fetch a single menu item
+```
+GET /api/v1/menus/:id/items/:id
+```
+
+#### Authentication scopes
+None
+
+#### Parameters
+None
+
+#### Success response
+A single nation and its data.
+
+```json
+{
+    "id": 3,
+    "menu_id": 1,
+    "name": "Fantastic Steel Chicken",
+    "description": "The beautiful range of Apple Naturalé that has an exciting mix...",
+    "price": 874,
+    "cover_img_src": "http:/0.0.0.0:3333/http:/placeimg.com/640/480/food",
+    "hidden": false,
+    "created_at": "2021-04-08T15:23:50.000+02:00",
+    "updated_at": "2021-04-08T15:23:50.000+02:00"
+}
+```
+
+#### Error status codes
+- `404` - Menu not found, Menu item not found
+
+---
+
+### Create menu item
+```
+POST /api/v1/menus/:id/items
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+- `name` - string, required
+- `description` - string, required
+- `price` - unsigned number, required
+- `hidden` - boolean, required
+
+#### Success response
+The created menu item.
+
+```json
+{
+    "id": 82,
+    "name": "name",
+    "description": "description",
+    "price": 100,
+    "hidden": false,
+    "menu_id": 1,
+    "created_at": "2021-04-08T15:32:48.059+02:00",
+    "updated_at": "2021-04-08T15:32:48.059+02:00"
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Menu not found
+- `422` - Response data validation error
+
+---
+
+### Update menu item
+```
+PUT /api/v1/menus/:id/items/:id
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+The request data can contain the following parameters:
+
+- `name` - string
+- `description` - string
+- `price` - unsigned number
+- `hidden` - boolean
+
+#### Success response
+The menu item containing the updated data.
+
+```json
+{
+    "id": 1,
+    "menu_id": 1,
+    "name": "new name",
+    "description": "new description",
+    "price": 300,
+    "cover_img_src": "http:/0.0.0.0:3333/http:/placeimg.com/640/480/food",
+    "hidden": false,
+    "created_at": "2021-04-08T15:23:50.000+02:00",
+    "updated_at": "2021-04-08T15:33:50.131+02:00"
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Menu not found, Menu item not found
+- `422` - Response data validation error
+
+---
+
+### Delete menu item
+```
+DELETE /api/v1/menus/:id/items/:id
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+None
+
+#### Success response
+None
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Menu not found, Menu item hour not found
+
+---
+
+### Upload menu item cover image
+```
+POST /api/v1/menus/:id/items/:id/upload
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+- `cover` - cover image (binary)
+
+#### Success response
+The updated menu item with the uploaded cover image.
+
+```json
+{
+    "id": 1,
+    "menu_id": 1,
+    "name": "new name",
+    "description": "new description",
+    "price": 300,
+    "cover_img_src": "http:/0.0.0.0:3333/8feec6d458664e1fda4e0a00a8832e899b4da5ab.jpg",
+    "hidden": false,
+    "created_at": "2021-04-08T15:23:50.000+02:00",
+    "updated_at": "2021-04-08T15:36:51.435+02:00"
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Menu not found, Menu item not found
+- `500` - Image could not be uploaded
