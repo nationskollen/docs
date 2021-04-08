@@ -70,7 +70,7 @@ Response data validation errors are more specific as to what causes the error:
 }
 ```
 
-The `errors` array can contain an arbitrary amount of errors.
+The `errors` array can contain any amount of errors.
 
 ### Activity levels
 Activity levels update dynamically depending on how much estimated people are
@@ -117,21 +117,14 @@ Each day is represented by a number:
 - `5` - Saturday
 - `6` - Sunday
 
----
+### File uploads
+File uploads is requires the following request header:
+- `Content-Type: multipart/format`
 
-### Locations
-The locations are provided for each nation that can only be created, updated and
-deleted by a nation admin.
-
-The fields that are alowed to be updated are:
-
-- `name`: The name for the location that is visible on a nation page
-- `description`: A description on this location
-- `address`: The address for this location
-- `max_capacity`: The maximum amount of people allowed/specified at given
-  location
-
-Each location has its own activity_level that is update dynamically.
+The following extensions are allowed:
+- `png`
+- `jpg`
+- `jpeg`
 
 ## Endpoints
 
@@ -294,21 +287,6 @@ The nation containing the updated data.
     "icon_img_src": "https://cdn.fakercloud.com/avatars/russoedu_128.jpg",
     "cover_img_src": "http://placeimg.com/640/480",
     "accent_color": "#0053a4",
-    "locations": [
-        {
-            "id": 1,
-            "nation_id": 400,
-            "name": "Bartell LLC",
-            "description": "Cupiditate qui rem. Praesentium alias quaerat et in r...",
-            "address": "386 Ransom Rest",
-            "max_capacity": 719,
-            "estimated_people_count": 95,
-            "activity_level": 2,
-            "is_open": false,
-            "cover_img_src": null
-        },
-        ...
-    ]
 }
 ```
 
@@ -316,6 +294,40 @@ The nation containing the updated data.
 - `401` - Authorization error
 - `404` - Nation not found
 - `422` - Response data validation error
+
+---
+
+### Upload cover image and icon
+```
+POST /api/v1/nations/:oid/upload
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+- `icon` - icon image, optional (binary)
+- `cover` - cover image, optional (binary)
+
+#### Success response
+The updated nation with the uploaded cover image and/or icon.
+
+```json
+{
+    "oid": 400,
+    "name": "Västmanlands-Dala nation",
+    "short_name": "V-dala",
+    "description": "Debitis minus molestias fugit ex at et fugiat...",
+    "icon_img_src": "http:/0.0.0.0:3333/6d3d87d7974dfc2f68e5699afbb24a672cd3aafb.png",
+    "cover_img_src": "http:/0.0.0.0:3333/9a3f7b825cae9166449c7bc6ae8bf127ba7fbea4.png",
+    "accent_color": "#0053a4"
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
+- `500` - Image could not be uploaded
 
 ---
 
@@ -655,6 +667,43 @@ The updated location.
 
 ---
 
+### Upload cover image
+```
+POST /api/v1/locations/:id/upload
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+- `cover` - cover image (binary)
+- `icon` - icon image (binary)
+
+#### Success response
+The updated location with the uploaded cover image.
+
+```json
+{
+    "id": 1,
+    "nation_id": 400,
+    "name": "Location name",
+    "description": "In voluptatem molestias accusamus...",
+    "address": "254 Cydney Shoals",
+    "max_capacity": 127,
+    "estimated_people_count": 0,
+    "activity_level": 0,
+    "is_open": false,
+    "cover_img_src": "http:/0.0.0.0:3333/d1988c8b8973156897c43fb977a237adc59a09d1.png"
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Location not found
+- `500` - Image could not be uploaded
+
+---
+
 ### Fetch all opening hours
 ```
 GET /api/v1/locations/:id/hours
@@ -744,6 +793,7 @@ A single opening hour and its data.
 #### Error status codes
 - `404` - Location not found, Opening hour not found
 
+---
 
 ### Create location opening hour
 ```
