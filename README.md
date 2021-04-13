@@ -5,3 +5,7 @@ and documentation related to code and structure.
 ## Current System Architecture
 
 ![system design](images/current_system_arch.png)
+
+### Closer look at the DB/API
+
+![api, backend](images/DB - closer look.png)
