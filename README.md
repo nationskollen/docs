@@ -8,4 +8,4 @@ and documentation related to code and structure.
 
 ### Closer look at the DB/API
 
-![api, backend](images/DB - closer look.png)
+![api backend](images/DBCloserLook.png)
