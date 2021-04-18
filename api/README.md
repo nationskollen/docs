@@ -1333,3 +1333,172 @@ The updated menu item with the uploaded cover image.
 - `401` - Authorization error
 - `404` - Menu not found, Menu item not found
 - `500` - Image could not be uploaded
+
+---
+### Events
+
+An event is only available to be created for a nation. It does not neseccarily
+have to have a location related to it but has the ability to do so. 
+A nation has relations to events though and whenever fetching a nation, will
+also fetch the events associated with it. 
+
+### Fetch a single event
+```
+GET /api/v1/nations/:oid/events/:eid
+```
+
+#### Authentication scopes
+None
+
+#### Parameters
+None
+
+#### Success response
+A single events and its data.
+
+```json
+{
+  "id": 1,
+  "nation_id": 400,
+  "name": "Ergonomic Steel Fish",
+  "description": "The Football Is Good For Training And Recreational Purposes",
+  "location_id": null,
+  "occurs_at": "2021-04-17T02:26:00.000+02:00",
+  "ends_at": "2021-04-17T14:19:00.000+02:00",
+  "cover_img_src": null
+}
+```
+
+#### Error status codes
+- `404` - Could not find event
+
+---
+
+### Create event
+```
+POST /api/v1/nations/:oid/events
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+- 	name: String, required
+- 	description: String, required
+- 	location_id: existing location and part of scope, not required
+- 	occurs_at: String, in HH:MM format
+- 	ends_at: String, in HH:MM format
+
+#### Success response
+The created events
+
+```json
+{
+  "name": "1Q",
+  "description": "Hurray!",
+  "location_id": 1,
+  "occurs_at": "12:30",
+  "ends_at": "21:30",
+  "nation_id": 400,
+  "id": 10
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `422` - Response data validation error
+
+---
+
+### Update event
+```
+PUT /api/v1/nations/:oid/events/:eid
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+The request data can contain the following parameters:
+
+- `name` - string
+- `description` - string
+- `location_id` - unsigned number
+- `occurs_at` - string, HH:MM format
+- `ends_at` - string, HH:MM format
+
+#### Success response
+The event containing the updated data.
+
+```json
+{
+  "id": 1,
+  "nation_id": 400,
+  "name": "asdf",
+  "description": "New!",
+  "location_id": 2,
+  "occurs_at": "2021-04-18T20:30:00.000+02:00",
+  "ends_at": "2021-04-18T21:30:00.000+02:00",
+  "cover_img_src": null
+}
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Event not found
+- `422` - Response data validation error
+
+---
+
+### Delete event
+```
+DELETE /api/v1/nations/:oid/events/:eid
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+None
+
+#### Success response
+None
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Event not found
+
+---
+
+### Upload menu item cover image
+```
+POST /api/v1/events/:eid/upload
+```
+
+#### Authentication scopes
+- `admin`
+
+#### Parameters
+- `cover` - cover image (binary)
+
+#### Success response
+The updated menu item with the uploaded cover image.
+
+```json
+{
+  "id": 1,
+  "nation_id": 400,
+  "name": "Handmade Fresh Towels",
+  "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+  "location_id": null,
+  "occurs_at": "03:24",
+  "ends_at": "18:11",
+  "cover_img_src": "http://0.0.0.0:3333/5fae04cfae39d85a221fd1d837f623f1931cc53e.gif"
+}
+```
+
+#### Error status codes
+- `401` - Authorization error
+- `404` - Event not found
+- `500` - Image could not be uploaded
