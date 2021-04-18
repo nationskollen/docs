@@ -1339,8 +1339,18 @@ The updated menu item with the uploaded cover image.
 
 An event is only available to be created for a nation. It does not neseccarily
 have to have a location related to it but has the ability to do so. 
-A nation has relations to events though and whenever fetching a nation, will
-also fetch the events associated with it. 
+If you would want to get every event a nation has, you would need to specify the
+following route:
+
+```
+GET /api/v1/nations/:oid/events
+```
+
+### Fetching all events in the system
+
+```
+GET /api/v1/events
+```
 
 ### Fetch a single event
 ```
@@ -1407,6 +1417,7 @@ The created events
 #### Error status codes
 - `401` - Authorization error
 - `422` - Response data validation error
+- `404` - Nation not found
 
 ---
 
@@ -1441,12 +1452,11 @@ The event containing the updated data.
   "ends_at": "2021-04-18T21:30:00.000+02:00",
   "cover_img_src": null
 }
-}
 ```
 
 #### Error status codes
 - `401` - Authorization error
-- `404` - Event not found
+- `404` - Nation not found, Event not found
 - `422` - Response data validation error
 
 ---
@@ -1467,7 +1477,7 @@ None
 
 #### Error status codes
 - `401` - Authorization error
-- `404` - Event not found
+- `404` - Nation not found, Event not found
 
 ---
 
@@ -1500,5 +1510,5 @@ The updated menu item with the uploaded cover image.
 
 #### Error status codes
 - `401` - Authorization error
-- `404` - Event not found
+- `404` - Nation not found, Event not found
 - `500` - Image could not be uploaded
