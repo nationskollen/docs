@@ -1337,19 +1337,72 @@ The updated menu item with the uploaded cover image.
 ---
 ### Events
 
-An event is only available to be created for a nation. It does not neseccarily
-have to have a location related to it but has the ability to do so. 
-If you would want to get every event a nation has, you would need to specify the
-following route:
+### Fetching all events for a nation 
 
 ```
 GET /api/v1/nations/:oid/events
 ```
 
+#### Authentication scopes
+None
+
+#### Parameters
+None
+
+#### Success response
+A single events and its data.
+
+```json
+[
+{
+  "id": 1,
+  "nation_id": 400,
+  "name": "Ergonomic Steel Fish",
+  "description": "The Football Is Good For Training And Recreational Purposes",
+  "location_id": null,
+  "occurs_at": "2021-04-17T02:26:00.000+02:00",
+  "ends_at": "2021-04-17T14:19:00.000+02:00",
+  "cover_img_src": null
+},
+.
+.
+.
+]
+```
+#### Error status codes
+- `404` - Nation not found
+
 ### Fetching all events in the system
 
 ```
 GET /api/v1/events
+```
+
+#### Authentication scopes
+None
+
+#### Parameters
+None
+
+#### Success response
+A single events and its data.
+
+```json
+[
+{
+  "id": 1,
+  "nation_id": 400,
+  "name": "Ergonomic Steel Fish",
+  "description": "The Football Is Good For Training And Recreational Purposes",
+  "location_id": null,
+  "occurs_at": "2021-04-17T02:26:00.000+02:00",
+  "ends_at": "2021-04-17T14:19:00.000+02:00",
+  "cover_img_src": null
+},
+.
+.
+.
+]
 ```
 
 ### Fetch a single event
@@ -1481,7 +1534,7 @@ None
 
 ---
 
-### Upload menu item cover image
+### Upload event cover image
 ```
 POST /api/v1/events/:eid/upload
 ```
@@ -1493,7 +1546,7 @@ POST /api/v1/events/:eid/upload
 - `cover` - cover image (binary)
 
 #### Success response
-The updated menu item with the uploaded cover image.
+The updated event with the uploaded cover image.
 
 ```json
 {
