@@ -1,0 +1,12 @@
+{
+    "name": "@dsp-krabby/docs",
+    "version": "1.0.0",
+    "description": "Nationskollen documentation",
+    "repository": "git://github.com/dsp-krabby/docs.git",
+    "author": "Team Krabby",
+    "license": "MIT",
+    "scripts": {
+        "compile": "./scripts/compile.sh",
+        "serve": "cd public && python3 -m http.server"
+    }
+}
