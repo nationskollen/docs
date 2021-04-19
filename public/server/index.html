@@ -1,0 +1,382 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@dsp-krabby/server</title>
+	<meta name="description" content="Documentation for @dsp-krabby/server">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/overrides.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@dsp-krabby/server</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>@dsp-krabby/server</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p><a href="https://github.com/dsp-krabby/server/actions/workflows/CI-Tests.yml"><img src="https://github.com/dsp-krabby/server/actions/workflows/CI-Tests.yml/badge.svg?branch=main" alt="Environment Tests"></a></p>
+				<a href="#nationskollen-api" id="nationskollen-api" style="color: inherit; text-decoration: none;">
+					<h1>Nationskollen API</h1>
+				</a>
+				<p>This repository contains the API, database and other core infrastructure needed
+					for the &quot;backend&quot; of all clients, e.g. the <a href="https://github.com/dsp-krabby/mobile">mobile app</a>
+				and <a href="https://github.com/dsp-krabby/web">website</a>.</p>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h2>Documentation</h2>
+				</a>
+				<p>All documentation for Nationskollen is available <a href="https://github.com/dsp-krabby/docs">here</a>.</p>
+				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
+					<h2>Development</h2>
+				</a>
+				<ol>
+					<li><code>npm install</code></li>
+					<li>Setup the database as described below (for your chosen database)</li>
+					<li><code>npm run dev</code></li>
+				</ol>
+				<p>The API will now be available at <code>localhost:3333</code>.</p>
+				<a href="#database" id="database" style="color: inherit; text-decoration: none;">
+					<h3>Database</h3>
+				</a>
+				<p>During development you can use either SQLite3 or PostgreSQL. Note that SQLite3
+					does not support datetime filtering and event filtering does not work. Because
+				of this, the default database is PostgreSQL.</p>
+				<a href="#sqlite3-setup" id="sqlite3-setup" style="color: inherit; text-decoration: none;">
+					<h4>SQLite3 setup</h4>
+				</a>
+				<p>Set <code>DB_CONNECTION</code> to <code>sqlite</code> in <code>.env</code>. Now everything should work as
+				expected.</p>
+				<a href="#postgresql-setup" id="postgresql-setup" style="color: inherit; text-decoration: none;">
+					<h4>PostgreSQL setup</h4>
+				</a>
+				<a href="#requirements" id="requirements" style="color: inherit; text-decoration: none;">
+					<h5>Requirements</h5>
+				</a>
+				<p>Before starting the database, make sure the following is installed:</p>
+				<ul>
+					<li>docker</li>
+					<li>docker-compose</li>
+				</ul>
+				<a href="#for-mac-what-is-known-at-least" id="for-mac-what-is-known-at-least" style="color: inherit; text-decoration: none;">
+					<h5>For mac (what is known at least):</h5>
+				</a>
+				<ul>
+					<li>Have the Docker Desktop application running while executing commands in the terminal.</li>
+				</ul>
+				<p>Install the dependencies and make sure that the docker service is running (e.g.
+					by enabling the docker daemon in systemd services or by starting Docker Desktop)
+					and start the PostgreSQL container using <code>npm run pg:start</code>.
+				If you want to stop the container you can run <code>npm run pg:stop</code>.</p>
+				<blockquote>
+					<p>Note that you will most likely need to prefix the <code>pg:start</code> and <code>pg:stop</code>
+					commands with <code>sudo</code> to be able to start the container.</p>
+				</blockquote>
+				<a href="#creating-the-required-tables" id="creating-the-required-tables" style="color: inherit; text-decoration: none;">
+					<h4>Creating the required tables</h4>
+				</a>
+				<p>Before you can start the server using <code>npm run dev</code> you must run migrations and
+					seeders using <code>npm run setup</code>. Note that this is <strong>not required</strong> to run tests,
+				since it will automatically do this.</p>
+				<a href="#commands" id="commands" style="color: inherit; text-decoration: none;">
+					<h3>Commands</h3>
+				</a>
+				<ul>
+					<li><code>npm run pg:start</code> - Starts the PostgreSQL database in docker</li>
+					<li><code>npm run pg:stop</code> - Stops the PostgreSQL database docker container</li>
+					<li><code>npm run setup</code> - Run database migrations and seeders</li>
+					<li><code>npm run build</code> - Build the application for production</li>
+					<li><code>npm run start</code> - Start the server in production mode</li>
+					<li><code>npm run dev</code> - Start the server in development mode</li>
+					<li><code>npm run lint</code> - Run ESLint on all source files</li>
+					<li><code>npm run format</code> - Format all source files using Prettier</li>
+					<li><code>npm run test</code> - Run all tests defined in <code>test/</code></li>
+					<li><code>npm run coverage</code> - Get test coverage as HTML in <code>coverage/index.html</code></li>
+					<li><code>npm run docs</code> - Generate documentation</li>
+					<li><code>npm run docs</code> - Generate documentation and watch for changes</li>
+				</ul>
+				<a href="#insomnia" id="insomnia" style="color: inherit; text-decoration: none;">
+					<h3>Insomnia</h3>
+				</a>
+				<p>Insomnia can be setup by importing the workspace file in
+					<code>.insomnia/Workspace/nationskollen.json</code>. Tokens are auto-generated and will be
+				inserted automatically when making authenticated requests.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controllers_http_authcontroller.html">Controllers/<wbr>Http/<wbr>Auth<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controllers_http_eventscontroller.html">Controllers/<wbr>Http/<wbr>Events<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controllers_http_locationscontroller.html">Controllers/<wbr>Http/<wbr>Locations<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controllers_http_menuitemscontroller.html">Controllers/<wbr>Http/<wbr>Menu<wbr>Items<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controllers_http_menuscontroller.html">Controllers/<wbr>Http/<wbr>Menus<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controllers_http_nationscontroller.html">Controllers/<wbr>Http/<wbr>Nations<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controllers_http_openinghourscontroller.html">Controllers/<wbr>Http/<wbr>Opening<wbr>Hours<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/exceptions_badrequestexception.html">Exceptions/<wbr>Bad<wbr>Request<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/exceptions_defaultexception.html">Exceptions/<wbr>Default<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/exceptions_eventnotfoundexception.html">Exceptions/<wbr>Event<wbr>Not<wbr>Found<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/exceptions_handler.html">Exceptions/<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/exceptions_internalerrorexception.html">Exceptions/<wbr>Internal<wbr>Error<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/exceptions_locationnotfoundexception.html">Exceptions/<wbr>Location<wbr>Not<wbr>Found<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/exceptions_menuitemnotfoundexception.html">Exceptions/<wbr>Menu<wbr>Item<wbr>Not<wbr>Found<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/exceptions_menunotfoundexception.html">Exceptions/<wbr>Menu<wbr>Not<wbr>Found<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/exceptions_nationnotfoundexception.html">Exceptions/<wbr>Nation<wbr>Not<wbr>Found<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/exceptions_notfoundexception.html">Exceptions/<wbr>Not<wbr>Found<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/exceptions_openinghournotfoundexception.html">Exceptions/<wbr>Opening<wbr>Hour<wbr>Not<wbr>Found<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/middleware_auth.html">Middleware/<wbr>Auth</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/middleware_event.html">Middleware/<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/middleware_location.html">Middleware/<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/middleware_menu.html">Middleware/<wbr>Menu</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/middleware_menuitem.html">Middleware/<wbr>Menu<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/middleware_nation.html">Middleware/<wbr>Nation</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/middleware_openinghour.html">Middleware/<wbr>Opening<wbr>Hour</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/middleware_scope.html">Middleware/<wbr>Scope</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/middleware_silentauth.html">Middleware/<wbr>Silent<wbr>Auth</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_event.html">Models/<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_location.html">Models/<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_menu.html">Models/<wbr>Menu</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_menuitem.html">Models/<wbr>Menu<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_nation.html">Models/<wbr>Nation</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_openinghour.html">Models/<wbr>Opening<wbr>Hour</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/models_user.html">Models/<wbr>User</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_ws.html">Services/<wbr>Ws</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils_activity.html">Utils/<wbr>Activity</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils_constants.html">Utils/<wbr>Constants</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils_database.html">Utils/<wbr>Database</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils_request.html">Utils/<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils_response.html">Utils/<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils_scopes.html">Utils/<wbr>Scopes</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils_serialize.html">Utils/<wbr>Serialize</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils_test.html">Utils/<wbr>Test</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils_time.html">Utils/<wbr>Time</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils_upload.html">Utils/<wbr>Upload</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utils_validator.html">Utils/<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_events_createvalidator.html">Validators/<wbr>Events/<wbr>Create<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_events_filtervalidator.html">Validators/<wbr>Events/<wbr>Filter<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_events_updatevalidator.html">Validators/<wbr>Events/<wbr>Update<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_events_uploadvalidator.html">Validators/<wbr>Events/<wbr>Upload<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_locations_activityvalidator.html">Validators/<wbr>Locations/<wbr>Activity<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_locations_createvalidator.html">Validators/<wbr>Locations/<wbr>Create<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_locations_updatevalidator.html">Validators/<wbr>Locations/<wbr>Update<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_locations_uploadvalidator.html">Validators/<wbr>Locations/<wbr>Upload<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_menuitems_createvalidator.html">Validators/<wbr>Menu<wbr>Items/<wbr>Create<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_menuitems_updatevalidator.html">Validators/<wbr>Menu<wbr>Items/<wbr>Update<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_menuitems_uploadvalidator.html">Validators/<wbr>Menu<wbr>Items/<wbr>Upload<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_menus_createvalidator.html">Validators/<wbr>Menus/<wbr>Create<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_menus_updatevalidator.html">Validators/<wbr>Menus/<wbr>Update<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_nations_updatevalidator.html">Validators/<wbr>Nations/<wbr>Update<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_nations_uploadvalidator.html">Validators/<wbr>Nations/<wbr>Upload<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_openinghours_createvalidator.html">Validators/<wbr>Opening<wbr>Hours/<wbr>Create<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_openinghours_updatevalidator.html">Validators/<wbr>Opening<wbr>Hours/<wbr>Update<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/validators_users_loginvalidator.html">Validators/<wbr>Users/<wbr>Login<wbr>Validator</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/theme.js"></script>
+</body>
+</html>

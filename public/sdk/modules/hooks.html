@@ -1,0 +1,1019 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>hooks | @dsp-krabby/sdk</title>
+	<meta name="description" content="Documentation for @dsp-krabby/sdk">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/overrides.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@dsp-krabby/sdk</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">@dsp-krabby/sdk</a>
+				</li>
+				<li>
+					<a href="hooks.html">hooks</a>
+				</li>
+			</ul>
+			<h1>Module hooks</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<a href="#react-hooks" id="react-hooks" style="color: inherit; text-decoration: none;">
+							<h2>React hooks</h2>
+						</a>
+						<p>Contains all the available React hooks in the SDK.</p>
+					</div>
+					<p>Fetcher functions are cached by default using <a href="https://swr.vercel.app/" class="external">SWR</a>. This includes data revalidation, automatic
+						rehydration and more. Every fetcher hooks exposes all of the returned values
+						from the <code>useSWR</code> hook. This means that you can refer to the SWR documentation
+					for information about how the fetcher hooks can be used.</p>
+					<p>For the other CRUD functions, i.e. <code>POST</code>, <code>PUT</code> and <code>DELETE</code> operations, we
+					use <code>useAsync</code> and <code>useAsyncCallback</code> from the <a href="https://github.com/slorber/react-async-hook" class="external">react-async-hook</a> package.</p>
+					<blockquote>
+						<p>Note that most of the hooks in this SDK will expose <strong>all</strong> of the returned
+							values from <code>useSWR</code>, <code>useAsync</code> and <code>useAsyncCallback</code> (depending on the
+							one that is used internally in the hook). This means that you can refer to
+						the documentation for each of these for more advanced usage.</p>
+					</blockquote>
+					<dl class="tsd-comment-tags">
+						<dt>see</dt>
+						<dd><p><a href="https://swr.vercel.app" class="external">SWR</a></p>
+						</dd>
+						<dt>see</dt>
+						<dd><p><a href="https://github.com/slorber/react-async-hook" class="external">react-async-hook</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter"><a href="../interfaces/hooks.asynchookcallbackcontract.html" class="tsd-kind-icon">Async<wbr>Hook<wbr>Callback<wbr>Contract</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter"><a href="../interfaces/hooks.asynchookcontract.html" class="tsd-kind-icon">Async<wbr>Hook<wbr>Contract</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter"><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-kind-icon">Cached<wbr>Async<wbr>Hook<wbr>Contract</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Activity Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#useactivitylevel" class="tsd-kind-icon">use<wbr>Activity<wbr>Level</a></li>
+							</ul>
+							<h3>Auth Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#uselogin" class="tsd-kind-icon">use<wbr>Login</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#uselogout" class="tsd-kind-icon">use<wbr>Logout</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#useuser" class="tsd-kind-icon">use<wbr>User</a></li>
+							</ul>
+							<h3>Fetcher Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#useevent" class="tsd-kind-icon">use<wbr>Event</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#useevents" class="tsd-kind-icon">use<wbr>Events</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#uselocation" class="tsd-kind-icon">use<wbr>Location</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#uselocations" class="tsd-kind-icon">use<wbr>Locations</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usemenu" class="tsd-kind-icon">use<wbr>Menu</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usemenuitem" class="tsd-kind-icon">use<wbr>Menu<wbr>Item</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usemenuitems" class="tsd-kind-icon">use<wbr>Menu<wbr>Items</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usemenus" class="tsd-kind-icon">use<wbr>Menus</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usenation" class="tsd-kind-icon">use<wbr>Nation</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usenationevents" class="tsd-kind-icon">use<wbr>Nation<wbr>Events</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usenations" class="tsd-kind-icon">use<wbr>Nations</a></li>
+							</ul>
+							<h3>General Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#useapi" class="tsd-kind-icon">use<wbr>Api</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usesdk" class="tsd-kind-icon">useSDK</a></li>
+							</ul>
+							<h3>Upload Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="hooks.html#useupload" class="tsd-kind-icon">use<wbr>Upload</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Activity Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="useactivitylevel" class="tsd-anchor"></a>
+					<h3>use<wbr>Activity<wbr>Level</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Activity<wbr>Level<span class="tsd-signature-symbol">(</span>locationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, initialActivityLevel<span class="tsd-signature-symbol">?: </span><a href="../enums/responses.activitylevels.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ActivityLevels</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/responses.activitylevels.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ActivityLevels</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L186">src/hooks.ts:186</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Subscribe to activity level changes of a location. Usage of this hook will
+										re-render your component whenever activity data is received from the server
+										Your component will be automatically unsubscribed from a location whenever
+									your component is unmounted or the <code>locationId</code> changes.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p><strong>Subscribing to activity changes of location</strong></p>
+										<pre><code class="language-javascript"><span style="color: #6A737D">// Dynamically subscribes to a locations activity and sets the intial</span>
+<span style="color: #6A737D">// activity level to the value received after fetching.</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">activityLevel</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useActivityLevel</span><span style="color: #E1E4E8">(</span>
+<span style="color: #E1E4E8">    props.location.id,</span>
+<span style="color: #E1E4E8">    props.location.activity_level</span>
+<span style="color: #E1E4E8">)</span>
+
+<span style="color: #6A737D">// Will re-render in realtime whenever the activity level is updated on the server</span>
+<span style="color: #F97583">return</span><span style="color: #E1E4E8"> (</span>
+<span style="color: #E1E4E8">    &lt;</span><span style="color: #85E89D">p</span><span style="color: #E1E4E8">&gt;Current activity level: {activityLevel}&lt;/</span><span style="color: #85E89D">p</span><span style="color: #E1E4E8">&gt;</span>
+<span style="color: #E1E4E8">)</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>locationId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The id of the location to subscribe to</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> initialActivityLevel: <a href="../enums/responses.activitylevels.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ActivityLevels</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The activity level that will be set on initial render</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/responses.activitylevels.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ActivityLevels</a></h4>
+							<p>The current activity level of the location</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Auth Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="uselogin" class="tsd-anchor"></a>
+					<h3>use<wbr>Login</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Login<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.asynchookcallbackcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">AsyncHookCallbackContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.user.html" class="tsd-signature-type" data-tsd-kind="Interface">User</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L207">src/hooks.ts:207</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Log in a user based on email and password.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.asynchookcallbackcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">AsyncHookCallbackContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.user.html" class="tsd-signature-type" data-tsd-kind="Interface">User</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="uselogout" class="tsd-anchor"></a>
+					<h3>use<wbr>Logout</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Logout<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.asynchookcallbackcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">AsyncHookCallbackContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L251">src/hooks.ts:251</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Logout a user.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.asynchookcallbackcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">AsyncHookCallbackContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="useuser" class="tsd-anchor"></a>
+					<h3>use<wbr>User</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>User<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/responses.user.html" class="tsd-signature-type" data-tsd-kind="Interface">User</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L242">src/hooks.ts:242</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieve a handle to the currently logged in user and all the data associated with the user.
+										If no user is logged in, <code>null</code> will be returned. Internally, the user is
+										stored in a state variable and will therefore re-render your component
+									whenever it changes.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/responses.user.html" class="tsd-signature-type" data-tsd-kind="Interface">User</a></h4>
+							<p>The currently logged in user (if any)</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Fetcher Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="useevent" class="tsd-anchor"></a>
+					<h3>use<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Event<span class="tsd-signature-symbol">(</span>eventId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.event.html" class="tsd-signature-type" data-tsd-kind="Interface">Event</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L409">src/hooks.ts:409</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches a single Event.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>eventId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The id of the <a href="../interfaces/responses.event.html">Event</a> to fetch</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Event filtering params</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.event.html" class="tsd-signature-type" data-tsd-kind="Interface">Event</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="useevents" class="tsd-anchor"></a>
+					<h3>use<wbr>Events</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Events<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#eventcollection" class="tsd-signature-type" data-tsd-kind="Type alias">EventCollection</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L381">src/hooks.ts:381</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches all Events.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>todo</dt>
+									<dd><p>Add parameters for fetching events of specific date</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>params: <a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Event filtering params</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#eventcollection" class="tsd-signature-type" data-tsd-kind="Type alias">EventCollection</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="uselocation" class="tsd-anchor"></a>
+					<h3>use<wbr>Location</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Location<span class="tsd-signature-symbol">(</span>locationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.location.html" class="tsd-signature-type" data-tsd-kind="Interface">Location</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L369">src/hooks.ts:369</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches a single Location.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>locationId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The id of the <a href="../interfaces/responses.location.html">Location</a> to fetch</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.location.html" class="tsd-signature-type" data-tsd-kind="Interface">Location</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="uselocations" class="tsd-anchor"></a>
+					<h3>use<wbr>Locations</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Locations<span class="tsd-signature-symbol">(</span>oid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#locationcollection" class="tsd-signature-type" data-tsd-kind="Type alias">LocationCollection</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L357">src/hooks.ts:357</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches all Locations for a Nation.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oid: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The oid of the <a href="../interfaces/responses.nation.html">Nation</a> to fetch locations of</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#locationcollection" class="tsd-signature-type" data-tsd-kind="Type alias">LocationCollection</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="usemenu" class="tsd-anchor"></a>
+					<h3>use<wbr>Menu</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Menu<span class="tsd-signature-symbol">(</span>menuId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.menu.html" class="tsd-signature-type" data-tsd-kind="Interface">Menu</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L434">src/hooks.ts:434</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches a single Menu.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>menuId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The id of the <a href="../interfaces/responses.menu.html">Menu</a> to fetch the menus of</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.menu.html" class="tsd-signature-type" data-tsd-kind="Interface">Menu</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="usemenuitem" class="tsd-anchor"></a>
+					<h3>use<wbr>Menu<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Menu<wbr>Item<span class="tsd-signature-symbol">(</span>menuItemId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.menuitem.html" class="tsd-signature-type" data-tsd-kind="Interface">MenuItem</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L456">src/hooks.ts:456</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches a single MenuItem.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>menuItemId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The id of the <a href="../interfaces/responses.menuitem.html">MenuItem</a> to fetch</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.menuitem.html" class="tsd-signature-type" data-tsd-kind="Interface">MenuItem</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="usemenuitems" class="tsd-anchor"></a>
+					<h3>use<wbr>Menu<wbr>Items</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Menu<wbr>Items<span class="tsd-signature-symbol">(</span>menuId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#menuitemcollection" class="tsd-signature-type" data-tsd-kind="Type alias">MenuItemCollection</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L445">src/hooks.ts:445</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches all MenuItems for a Menu.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>menuId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The id of the <a href="../interfaces/responses.menu.html">Menu</a> to fetch the items of</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#menuitemcollection" class="tsd-signature-type" data-tsd-kind="Type alias">MenuItemCollection</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="usemenus" class="tsd-anchor"></a>
+					<h3>use<wbr>Menus</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Menus<span class="tsd-signature-symbol">(</span>locationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#menucollection" class="tsd-signature-type" data-tsd-kind="Type alias">MenuCollection</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L423">src/hooks.ts:423</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches all Menus for a Location.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>locationId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The id of the <a href="../interfaces/responses.location.html">Location</a> to fetch the menus of</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#menucollection" class="tsd-signature-type" data-tsd-kind="Type alias">MenuCollection</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="usenation" class="tsd-anchor"></a>
+					<h3>use<wbr>Nation</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Nation<span class="tsd-signature-symbol">(</span>oid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.nation.html" class="tsd-signature-type" data-tsd-kind="Interface">Nation</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L346">src/hooks.ts:346</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches a single Nation.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oid: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The oid of the <a href="../interfaces/responses.nation.html">Nation</a> to fetch</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/responses.nation.html" class="tsd-signature-type" data-tsd-kind="Interface">Nation</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="usenationevents" class="tsd-anchor"></a>
+					<h3>use<wbr>Nation<wbr>Events</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Nation<wbr>Events<span class="tsd-signature-symbol">(</span>oid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#eventcollection" class="tsd-signature-type" data-tsd-kind="Type alias">EventCollection</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L394">src/hooks.ts:394</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches all Events for a Nation.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>todo</dt>
+									<dd><p>Add parameters for fetching events of specific date</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oid: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The oid of the <a href="../interfaces/responses.nation.html">Nation</a> to fetch events for</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Event filtering params</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#eventcollection" class="tsd-signature-type" data-tsd-kind="Type alias">EventCollection</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="usenations" class="tsd-anchor"></a>
+					<h3>use<wbr>Nations</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Nations<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#nationcollection" class="tsd-signature-type" data-tsd-kind="Type alias">NationCollection</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L335">src/hooks.ts:335</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches all Nations.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#nationcollection" class="tsd-signature-type" data-tsd-kind="Type alias">NationCollection</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>General Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="useapi" class="tsd-anchor"></a>
+					<h3>use<wbr>Api</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Api<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>activity<span class="tsd-signature-symbol">: </span><a href="../classes/services_activity.activity.html" class="tsd-signature-type" data-tsd-kind="Class">Activity</a><span class="tsd-signature-symbol">; </span>auth<span class="tsd-signature-symbol">: </span><a href="../classes/services_auth.auth.html" class="tsd-signature-type" data-tsd-kind="Class">Auth</a><span class="tsd-signature-symbol">; </span>events<span class="tsd-signature-symbol">: </span><a href="../classes/services_events.events.html" class="tsd-signature-type" data-tsd-kind="Class">Events</a><span class="tsd-signature-symbol">; </span>locations<span class="tsd-signature-symbol">: </span><a href="../classes/services_locations.locations.html" class="tsd-signature-type" data-tsd-kind="Class">Locations</a><span class="tsd-signature-symbol">; </span>menus<span class="tsd-signature-symbol">: </span><a href="../classes/services_menus.menus.html" class="tsd-signature-type" data-tsd-kind="Class">Menus</a><span class="tsd-signature-symbol">; </span>nations<span class="tsd-signature-symbol">: </span><a href="../classes/services_nations.nations.html" class="tsd-signature-type" data-tsd-kind="Class">Nations</a><span class="tsd-signature-symbol">; </span>openingHours<span class="tsd-signature-symbol">: </span><a href="../classes/services_opening_hours.openinghours.html" class="tsd-signature-type" data-tsd-kind="Class">OpeningHours</a><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L155">src/hooks.ts:155</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieve a handle to the API client for making authenticated <code>POST</code>, <code>PUT</code> and
+										<code>DELETE</code> requests. This should only be used if you want to implement
+										functionality for student nation staff. Fetching data should be done using
+									one of the available fetcher hooks since they will cache your data using <a href="https://swr.vercel.app/" class="external">SWR</a>.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p><strong>Updating a student nation description</strong></p>
+										<pre><code class="language-javascript"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">api</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useApi</span><span style="color: #E1E4E8">()</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> [</span><span style="color: #79B8FF">description</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">setDescription</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useState</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">&#039;&#039;</span><span style="color: #E1E4E8">)</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">response</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useAsyncCallback</span><span style="color: #E1E4E8">(() </span><span style="color: #F97583">=&gt;</span><span style="color: #E1E4E8"> api.nations.</span><span style="color: #B392F0">update</span><span style="color: #E1E4E8">({ description }))</span>
+
+<span style="color: #F97583">return</span><span style="color: #E1E4E8"> (</span>
+<span style="color: #E1E4E8">    &lt;</span><span style="color: #85E89D">div</span><span style="color: #E1E4E8">&gt;</span>
+<span style="color: #E1E4E8">        {</span><span style="color: #6A737D">// Make the request to the API when the user clicks the button}</span>
+<span style="color: #E1E4E8">        &lt;</span><span style="color: #85E89D">button</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">onClick</span><span style="color: #F97583">=</span><span style="color: #E1E4E8">{response.</span><span style="color: #B392F0">execute</span><span style="color: #E1E4E8">()}&gt;Update description&lt;/</span><span style="color: #85E89D">button</span><span style="color: #E1E4E8">&gt;</span>
+<span style="color: #E1E4E8">        {response.error &amp;&amp; &lt;p&gt;Could not update nation: {response.error.message}</span><span style="color: #F97583">&lt;/</span><span style="color: #E1E4E8">p</span><span style="color: #F97583">&gt;</span><span style="color: #E1E4E8">}</span>
+<span style="color: #E1E4E8">        {response.result &amp;&amp; &lt;p&gt;New description: {response.result.description}</span><span style="color: #F97583">&lt;/</span><span style="color: #E1E4E8">p</span><span style="color: #F97583">&gt;</span><span style="color: #E1E4E8">}</span>
+<span style="color: #E1E4E8">    </span><span style="color: #F97583">&lt;/</span><span style="color: #E1E4E8">div</span><span style="color: #F97583">&gt;</span>
+<span style="color: #E1E4E8">)</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>activity<span class="tsd-signature-symbol">: </span><a href="../classes/services_activity.activity.html" class="tsd-signature-type" data-tsd-kind="Class">Activity</a><span class="tsd-signature-symbol">; </span>auth<span class="tsd-signature-symbol">: </span><a href="../classes/services_auth.auth.html" class="tsd-signature-type" data-tsd-kind="Class">Auth</a><span class="tsd-signature-symbol">; </span>events<span class="tsd-signature-symbol">: </span><a href="../classes/services_events.events.html" class="tsd-signature-type" data-tsd-kind="Class">Events</a><span class="tsd-signature-symbol">; </span>locations<span class="tsd-signature-symbol">: </span><a href="../classes/services_locations.locations.html" class="tsd-signature-type" data-tsd-kind="Class">Locations</a><span class="tsd-signature-symbol">; </span>menus<span class="tsd-signature-symbol">: </span><a href="../classes/services_menus.menus.html" class="tsd-signature-type" data-tsd-kind="Class">Menus</a><span class="tsd-signature-symbol">; </span>nations<span class="tsd-signature-symbol">: </span><a href="../classes/services_nations.nations.html" class="tsd-signature-type" data-tsd-kind="Class">Nations</a><span class="tsd-signature-symbol">; </span>openingHours<span class="tsd-signature-symbol">: </span><a href="../classes/services_opening_hours.openinghours.html" class="tsd-signature-type" data-tsd-kind="Class">OpeningHours</a><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>activity<span class="tsd-signature-symbol">: </span><a href="../classes/services_activity.activity.html" class="tsd-signature-type" data-tsd-kind="Class">Activity</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>auth<span class="tsd-signature-symbol">: </span><a href="../classes/services_auth.auth.html" class="tsd-signature-type" data-tsd-kind="Class">Auth</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>events<span class="tsd-signature-symbol">: </span><a href="../classes/services_events.events.html" class="tsd-signature-type" data-tsd-kind="Class">Events</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>locations<span class="tsd-signature-symbol">: </span><a href="../classes/services_locations.locations.html" class="tsd-signature-type" data-tsd-kind="Class">Locations</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>menus<span class="tsd-signature-symbol">: </span><a href="../classes/services_menus.menus.html" class="tsd-signature-type" data-tsd-kind="Class">Menus</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>nations<span class="tsd-signature-symbol">: </span><a href="../classes/services_nations.nations.html" class="tsd-signature-type" data-tsd-kind="Class">Nations</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>opening<wbr>Hours<span class="tsd-signature-symbol">: </span><a href="../classes/services_opening_hours.openinghours.html" class="tsd-signature-type" data-tsd-kind="Class">OpeningHours</a></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="usesdk" class="tsd-anchor"></a>
+					<h3>useSDK</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">useSDK<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/context.contextcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">ContextContract</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L127">src/hooks.ts:127</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Hook used to get all the available data from the SDK context.
+										The returned data in this hook is subject to change and it is
+										recommended to instead use the shorthand hooks for extracting your
+									data:</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="hooks.html#useapi">useApi</a> for getting the API client handle</p>
+									</dd>
+									<dt>see</dt>
+									<dd><p><a href="hooks.html#useuser">useUser</a> for getting the currently logged in user</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/context.contextcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">ContextContract</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Upload Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="useupload" class="tsd-anchor"></a>
+					<h3>use<wbr>Upload</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Upload&lt;T&gt;<span class="tsd-signature-symbol">(</span>fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.asynchookcallbackcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">AsyncHookCallbackContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/1d17cbd/src/hooks.ts#L295">src/hooks.ts:295</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Hook to upload images to resources, e.g. student nation or menu items. Only
+										supports a single upload, i.e. you can not upload both an icon and a cover
+										image for a nation with a single call to this hook. If you want to allow
+									multiple uploads, you need to call this hook once for each upload.</p>
+								</div>
+								<p>This hook will automatically add the file blob to the upload function that
+									you select. This means that you can omit the last argument of the upload function.
+								You can see an example of this below.</p>
+								<p>For each upload you must specify the form field (i.e. the upload that you want to make).
+								The available upload fields can be seen in the respective service, e.g.:</p>
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="../enums/services_nations.nationuploads.html">NationUploads</a> for all available upload fields for student nations</p>
+									</dd>
+									<dt>example</dt>
+									<dd><p><strong>Uploading a cover image to a student nation</strong></p>
+										<pre><code class="language-javascript"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">api</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useApi</span><span style="color: #E1E4E8">()</span>
+
+<span style="color: #6A737D">// Specify the student nation and form field that we want to use.</span>
+<span style="color: #6A737D">// The uploader also exposes all of the members returned by the &#039;useAsync&#039; hook.</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">uploader</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useUpload</span><span style="color: #E1E4E8">(api.nations.upload, [props.nation.oid, </span><span style="color: #9ECBFF">&#039;cover&#039;</span><span style="color: #E1E4E8">])</span>
+
+<span style="color: #6A737D">// Using the uploader onChange event handler, the file will be set automatically</span>
+<span style="color: #F97583">return</span><span style="color: #E1E4E8"> (</span>
+<span style="color: #E1E4E8">    &lt;</span><span style="color: #85E89D">div</span><span style="color: #E1E4E8">&gt;</span>
+<span style="color: #E1E4E8">        &lt;</span><span style="color: #85E89D">input</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">type</span><span style="color: #F97583">=</span><span style="color: #9ECBFF">&quot;file&quot;</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">onChange</span><span style="color: #F97583">=</span><span style="color: #E1E4E8">{uploader.onFileChanged} /&gt;</span>
+<span style="color: #E1E4E8">        &lt;</span><span style="color: #85E89D">button</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">onClick</span><span style="color: #F97583">=</span><span style="color: #E1E4E8">{uploader.execute}&gt;Upload cover image&lt;/</span><span style="color: #85E89D">button</span><span style="color: #E1E4E8">&gt;</span>
+<span style="color: #E1E4E8">    &lt;/</span><span style="color: #85E89D">div</span><span style="color: #E1E4E8">&gt;</span>
+<span style="color: #E1E4E8">)</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+									<div class="tsd-comment tsd-typography">
+										<p>The resource that will be returned in the result after uploading, i.e. a <a href="../interfaces/responses.nation.html">Nation</a></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fn: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The upload function to use when <code>execute()</code> is called.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>params: <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Upload function arguments with the file blob (last argument) omitted</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.asynchookcallbackcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">AsyncHookCallbackContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="client.html">client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="connection.html">connection</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="constants.html">constants</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="context.html">context</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="errors.html">errors</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="hooks.html">hooks</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="index.html">index</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="provider.html">provider</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="query.html">query</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="responses.html">responses</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services.html">services</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_activity.html">services/activity</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_auth.html">services/auth</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_base.html">services/base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_events.html">services/events</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_locations.html">services/locations</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_menu_items.html">services/menu-<wbr>items</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_menus.html">services/menus</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_nations.html">services/nations</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_opening_hours.html">services/opening-<wbr>hours</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="typings.html">typings</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="utils.html">utils</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="websockets.html">websockets</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/hooks.asynchookcallbackcontract.html" class="tsd-kind-icon">Async<wbr>Hook<wbr>Callback<wbr>Contract</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/hooks.asynchookcontract.html" class="tsd-kind-icon">Async<wbr>Hook<wbr>Contract</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-kind-icon">Cached<wbr>Async<wbr>Hook<wbr>Contract</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#useactivitylevel" class="tsd-kind-icon">use<wbr>Activity<wbr>Level</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#useapi" class="tsd-kind-icon">use<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#useevent" class="tsd-kind-icon">use<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#useevents" class="tsd-kind-icon">use<wbr>Events</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#uselocation" class="tsd-kind-icon">use<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#uselocations" class="tsd-kind-icon">use<wbr>Locations</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#uselogin" class="tsd-kind-icon">use<wbr>Login</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#uselogout" class="tsd-kind-icon">use<wbr>Logout</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#usemenu" class="tsd-kind-icon">use<wbr>Menu</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#usemenuitem" class="tsd-kind-icon">use<wbr>Menu<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#usemenuitems" class="tsd-kind-icon">use<wbr>Menu<wbr>Items</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#usemenus" class="tsd-kind-icon">use<wbr>Menus</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#usenation" class="tsd-kind-icon">use<wbr>Nation</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#usenationevents" class="tsd-kind-icon">use<wbr>Nation<wbr>Events</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#usenations" class="tsd-kind-icon">use<wbr>Nations</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#usesdk" class="tsd-kind-icon">useSDK</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="hooks.html#useupload" class="tsd-kind-icon">use<wbr>Upload</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#useuser" class="tsd-kind-icon">use<wbr>User</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
