@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>LocationUploads | @dsp-krabby/sdk</title>
+	<title>pagination | @dsp-krabby/sdk</title>
 	<meta name="description" content="Documentation for @dsp-krabby/sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,10 @@
 					<a href="../modules.html">@dsp-krabby/sdk</a>
 				</li>
 				<li>
-					<a href="../modules/services_locations.html">services/locations</a>
-				</li>
-				<li>
-					<a href="services_locations.locationuploads.html">LocationUploads</a>
+					<a href="pagination.html">pagination</a>
 				</li>
 			</ul>
-			<h1>Enumeration LocationUploads</h1>
+			<h1>Module pagination</h1>
 		</div>
 	</div>
 </header>
@@ -74,25 +71,54 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="services_locations.locationuploads.html#cover" class="tsd-kind-icon">Cover</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter"><a href="../interfaces/pagination.paginatedcachedasynchookcontract.html" class="tsd-kind-icon">Paginated<wbr>Cached<wbr>Async<wbr>Hook<wbr>Contract</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/pagination.paginationmeta.html" class="tsd-kind-icon">Pagination<wbr>Meta</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="pagination.html#createpaginatedresponse" class="tsd-kind-icon">create<wbr>Paginated<wbr>Response</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="cover" class="tsd-anchor"></a>
-					<h3>Cover</h3>
-					<div class="tsd-signature tsd-kind-icon">Cover<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;cover&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/services/locations.ts#L7">src/services/locations.ts:7</a></li>
-						</ul>
-					</aside>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="createpaginatedresponse" class="tsd-anchor"></a>
+					<h3>create<wbr>Paginated<wbr>Response</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Paginated<wbr>Response&lt;T, V&gt;<span class="tsd-signature-symbol">(</span>hookData<span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/pagination.paginatedcachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">PaginatedCachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/pagination.tsx#L38">src/pagination.tsx:38</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+								<li>
+									<h4>V<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>hookData: <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/pagination.paginatedcachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">PaginatedCachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -103,95 +129,89 @@
 						<a href="../modules.html">Modules</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/client.html">client</a>
+						<a href="client.html">client</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/connection.html">connection</a>
+						<a href="connection.html">connection</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/constants.html">constants</a>
+						<a href="constants.html">constants</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/context.html">context</a>
+						<a href="context.html">context</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/errors.html">errors</a>
+						<a href="errors.html">errors</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/hooks.html">hooks</a>
+						<a href="hooks.html">hooks</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/index.html">index</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/pagination.html">pagination</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/provider.html">provider</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/query.html">query</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/responses.html">responses</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services.html">services</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_activity.html">services/activity</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_auth.html">services/auth</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_base.html">services/base</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_events.html">services/events</a>
+						<a href="index.html">index</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/services_locations.html">services/locations</a>
+						<a href="pagination.html">pagination</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/services_menu_items.html">services/menu-<wbr>items</a>
+						<a href="provider.html">provider</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/services_menus.html">services/menus</a>
+						<a href="query.html">query</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/services_nations.html">services/nations</a>
+						<a href="responses.html">responses</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/services_opening_hours.html">services/opening-<wbr>hours</a>
+						<a href="services.html">services</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/typings.html">typings</a>
+						<a href="services_activity.html">services/activity</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/utils.html">utils</a>
+						<a href="services_auth.html">services/auth</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/websockets.html">websockets</a>
+						<a href="services_base.html">services/base</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_events.html">services/events</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_locations.html">services/locations</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_menu_items.html">services/menu-<wbr>items</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_menus.html">services/menus</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_nations.html">services/nations</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_opening_hours.html">services/opening-<wbr>hours</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="typings.html">typings</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="utils.html">utils</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="websockets.html">websockets</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-enum tsd-parent-kind-module">
-						<a href="services_locations.locationuploads.html" class="tsd-kind-icon">Location<wbr>Uploads</a>
-						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="services_locations.locationuploads.html#cover" class="tsd-kind-icon">Cover</a>
-							</li>
-						</ul>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/pagination.paginatedcachedasynchookcontract.html" class="tsd-kind-icon">Paginated<wbr>Cached<wbr>Async<wbr>Hook<wbr>Contract</a>
 					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/services_locations.locations.html" class="tsd-kind-icon">Locations</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/pagination.paginationmeta.html" class="tsd-kind-icon">Pagination<wbr>Meta</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="pagination.html#createpaginatedresponse" class="tsd-kind-icon">create<wbr>Paginated<wbr>Response</a>
 					</li>
 				</ul>
 			</nav>
