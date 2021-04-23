@@ -125,12 +125,12 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#useevents" class="tsd-kind-icon">use<wbr>Events</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#uselocation" class="tsd-kind-icon">use<wbr>Location</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#uselocations" class="tsd-kind-icon">use<wbr>Locations</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usemaplocations" class="tsd-kind-icon">use<wbr>Map<wbr>Locations</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usemenu" class="tsd-kind-icon">use<wbr>Menu</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usemenuitem" class="tsd-kind-icon">use<wbr>Menu<wbr>Item</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usemenuitems" class="tsd-kind-icon">use<wbr>Menu<wbr>Items</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usemenus" class="tsd-kind-icon">use<wbr>Menus</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usenation" class="tsd-kind-icon">use<wbr>Nation</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usenationevents" class="tsd-kind-icon">use<wbr>Nation<wbr>Events</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="hooks.html#usenations" class="tsd-kind-icon">use<wbr>Nations</a></li>
 							</ul>
 							<h3>General Functions</h3>
@@ -158,7 +158,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L187">src/hooks.ts:187</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L183">src/hooks.ts:183</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -219,7 +219,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L208">src/hooks.ts:208</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L204">src/hooks.ts:204</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -241,7 +241,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L252">src/hooks.ts:252</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L248">src/hooks.ts:248</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -263,7 +263,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L243">src/hooks.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L239">src/hooks.ts:239</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -292,7 +292,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L412">src/hooks.ts:412</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L438">src/hooks.ts:438</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -323,29 +323,61 @@
 					<a name="useevents" class="tsd-anchor"></a>
 					<h3>use<wbr>Events</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">use<wbr>Events<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/pagination.paginatedcachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">PaginatedCachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#eventcollection" class="tsd-signature-type" data-tsd-kind="Type alias">EventCollection</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Events<span class="tsd-signature-symbol">(</span>oid<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/pagination.paginatedcachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">PaginatedCachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#eventcollection" class="tsd-signature-type" data-tsd-kind="Type alias">EventCollection</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L382">src/hooks.ts:382</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L423">src/hooks.ts:423</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Fetches and caches all Events.</p>
+									<p>Fetches and caches Events.
+										If <code>oid</code> is set, e.g. not <code>undefined</code> or <code>null</code>, only the events for that
+									specific Nation will be fetched.</p>
 								</div>
 								<dl class="tsd-comment-tags">
-									<dt>todo</dt>
-									<dd><p>Add parameters for fetching events of specific date</p>
+									<dt>example</dt>
+									<dd><pre><code class="language-typescript"><span style="color: #6A737D">// Fetches ALL available events for today</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">undefined</span><span style="color: #E1E4E8">, { date: </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Date</span><span style="color: #E1E4E8">() })</span>
+
+<span style="color: #6A737D">// Fetches today&#039;s events for the selected nation (oid 400)</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">400</span><span style="color: #E1E4E8">, { date: </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Date</span><span style="color: #E1E4E8">() })</span>
+
+<span style="color: #6A737D">// You can of course use a variable (e.g. state or prop) to set it dynamically</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvent</span><span style="color: #E1E4E8">(props.oid, { date: </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Date</span><span style="color: #E1E4E8">() })</span>
+<span style="color: #6A737D">// or</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> [</span><span style="color: #79B8FF">oid</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">setOid</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useState</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">)</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvent</span><span style="color: #E1E4E8">(oid, { date: </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Date</span><span style="color: #E1E4E8">() })</span>
+</code></pre>
+										<p>Note that you do not need to specify any query data. By default, it will fetch
+										a total of {@link DEFAULT_PAGINATION_AMOUNT} per page.</p>
+										<p>This hook supports <strong>infinite loading</strong>. To fetch more data, e.g. while scrolling,
+										do the following:</p>
+										<pre><code class="language-typescript"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">error</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">pagination</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">size</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">setSize</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, { amount: </span><span style="color: #79B8FF">9</span><span style="color: #E1E4E8"> })</span>
+</code></pre>
+										<p>To use regular pagination, i.e. to render <strong>only</strong> the data for the page and not
+										the previous pages, you can do the following:</p>
+										<pre><code class="language-typescript"><span style="color: #F97583">const</span><span style="color: #E1E4E8"> [</span><span style="color: #79B8FF">page</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">setPage</span><span style="color: #E1E4E8">] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useState</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">)</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">error</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">pagination</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, { page, amount: </span><span style="color: #79B8FF">9</span><span style="color: #E1E4E8"> })</span>
+</code></pre>
+										<p>As you can see, the only difference between the two is which state variable you
+										use to decide which page to load.</p>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>params: <a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> oid: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The oid of the <a href="../interfaces/responses.nation.html">Nation</a> to fetch events for.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Event filtering params</p>
 									</div>
@@ -365,7 +397,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L370">src/hooks.ts:370</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L375">src/hooks.ts:375</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -396,7 +428,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L358">src/hooks.ts:358</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L354">src/hooks.ts:354</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -418,6 +450,28 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="usemaplocations" class="tsd-anchor"></a>
+					<h3>use<wbr>Map<wbr>Locations</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Map<wbr>Locations<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#locationcollection" class="tsd-signature-type" data-tsd-kind="Type alias">LocationCollection</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L363">src/hooks.ts:363</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetches and caches all Locations that are shown on the map.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#locationcollection" class="tsd-signature-type" data-tsd-kind="Type alias">LocationCollection</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="usemenu" class="tsd-anchor"></a>
 					<h3>use<wbr>Menu</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -427,7 +481,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L437">src/hooks.ts:437</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L463">src/hooks.ts:463</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -458,7 +512,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L459">src/hooks.ts:459</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L485">src/hooks.ts:485</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -489,7 +543,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L448">src/hooks.ts:448</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L474">src/hooks.ts:474</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -520,7 +574,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L426">src/hooks.ts:426</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L452">src/hooks.ts:452</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -551,7 +605,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L347">src/hooks.ts:347</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L343">src/hooks.ts:343</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -573,48 +627,6 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="usenationevents" class="tsd-anchor"></a>
-					<h3>use<wbr>Nation<wbr>Events</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">use<wbr>Nation<wbr>Events<span class="tsd-signature-symbol">(</span>oid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/pagination.paginatedcachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">PaginatedCachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#eventcollection" class="tsd-signature-type" data-tsd-kind="Type alias">EventCollection</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L397">src/hooks.ts:397</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Fetches and caches all Events for a Nation.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>todo</dt>
-									<dd><p>Add parameters for fetching events of specific date</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>oid: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The oid of the <a href="../interfaces/responses.nation.html">Nation</a> to fetch events for</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="../interfaces/query.eventqueryparams.html" class="tsd-signature-type" data-tsd-kind="Interface">EventQueryParams</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Event filtering params</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/pagination.paginatedcachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">PaginatedCachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><a href="responses.html#eventcollection" class="tsd-signature-type" data-tsd-kind="Type alias">EventCollection</a><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="usenations" class="tsd-anchor"></a>
 					<h3>use<wbr>Nations</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -624,7 +636,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L336">src/hooks.ts:336</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L332">src/hooks.ts:332</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -649,7 +661,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L156">src/hooks.ts:156</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L152">src/hooks.ts:152</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -715,7 +727,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L128">src/hooks.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L124">src/hooks.ts:124</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -751,7 +763,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/826497e/src/hooks.ts#L296">src/hooks.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L292">src/hooks.ts:292</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -953,6 +965,9 @@
 						<a href="hooks.html#uselogout" class="tsd-kind-icon">use<wbr>Logout</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="hooks.html#usemaplocations" class="tsd-kind-icon">use<wbr>Map<wbr>Locations</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="hooks.html#usemenu" class="tsd-kind-icon">use<wbr>Menu</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
@@ -966,9 +981,6 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="hooks.html#usenation" class="tsd-kind-icon">use<wbr>Nation</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="hooks.html#usenationevents" class="tsd-kind-icon">use<wbr>Nation<wbr>Events</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="hooks.html#usenations" class="tsd-kind-icon">use<wbr>Nations</a>

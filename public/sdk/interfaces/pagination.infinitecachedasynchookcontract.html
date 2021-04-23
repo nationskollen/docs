@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PaginatedCachedAsyncHookContract | @dsp-krabby/sdk</title>
+	<title>InfiniteCachedAsyncHookContract | @dsp-krabby/sdk</title>
 	<meta name="description" content="Documentation for @dsp-krabby/sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/pagination.html">pagination</a>
 				</li>
 				<li>
-					<a href="pagination.paginatedcachedasynchookcontract.html">PaginatedCachedAsyncHookContract</a>
+					<a href="pagination.infinitecachedasynchookcontract.html">InfiniteCachedAsyncHookContract</a>
 				</li>
 			</ul>
-			<h1>Interface PaginatedCachedAsyncHookContract&lt;T&gt;</h1>
+			<h1>Interface InfiniteCachedAsyncHookContract&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -72,16 +72,16 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<a href="#paginated-cached-async-hook" id="paginated-cached-async-hook" style="color: inherit; text-decoration: none;">
-							<h2>Paginated cached async hook</h2>
+						<a href="#infinite-cached-async-hook" id="infinite-cached-async-hook" style="color: inherit; text-decoration: none;">
+							<h2>Infinite cached async hook</h2>
 						</a>
-						<p>Extends the return type defined by <a href="hooks.cachedasynchookcontract.html">CachedAsyncHookContract</a></p>
+						<p>Extends the return type defined by <a href="hooks.cachedasynchookcontract.html">CachedAsyncHookContract</a> and <a href="https://github.com/vercel/swr/blob/master/src/use-swr-infinite.ts" class="external">useSWRInfinite</a></p>
 					</div>
 					<p>Defines the result of a paginated response. This can be used just like the
 						regular <a href="hooks.cachedasynchookcontract.html">CachedAsyncHookContract</a>. It exposes an additional property
 					called <code>pagination</code> that contains the pagination metadata: <a href="pagination.paginationmeta.html">PaginationMeta</a>.</p>
 					<p>Note that if no pagination params is specified in the fetcher hook, e.g. <a href="../modules/hooks.html#useevents">useEvents</a>,
-					the resulting data will use the default page amount {@link DEFAULT_PAGINATION_AMOUNT}.</p>
+					the resulting data will use the default page amount {@link DEFAULT_PAGE_AMOUNT}.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-type-parameters">
@@ -101,10 +101,15 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="pagination.infinitecachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">InfiniteCachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
+						<a href="hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">PaginatedCachedAsyncHookContract</span>
+								<span class="target">InfiniteCachedAsyncHookContract</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="pagination.paginatedcachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">PaginatedCachedAsyncHookContract</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
@@ -117,13 +122,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="pagination.paginatedcachedasynchookcontract.html#data" class="tsd-kind-icon">data</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="pagination.paginatedcachedasynchookcontract.html#error" class="tsd-kind-icon">error</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="pagination.paginatedcachedasynchookcontract.html#isvalidating" class="tsd-kind-icon">is<wbr>Validating</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="pagination.paginatedcachedasynchookcontract.html#mutate" class="tsd-kind-icon">mutate</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.paginatedcachedasynchookcontract.html#pagination" class="tsd-kind-icon">pagination</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="pagination.paginatedcachedasynchookcontract.html#setsize" class="tsd-kind-icon">set<wbr>Size</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="pagination.paginatedcachedasynchookcontract.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="pagination.infinitecachedasynchookcontract.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="pagination.infinitecachedasynchookcontract.html#error" class="tsd-kind-icon">error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="pagination.infinitecachedasynchookcontract.html#isvalidating" class="tsd-kind-icon">is<wbr>Validating</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="pagination.infinitecachedasynchookcontract.html#mutate" class="tsd-kind-icon">mutate</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.infinitecachedasynchookcontract.html#setsize" class="tsd-kind-icon">set<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.infinitecachedasynchookcontract.html#size" class="tsd-kind-icon">size</a></li>
 							</ul>
 						</section>
 					</div>
@@ -136,7 +140,7 @@
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> data</h3>
 					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="pagination.infinitecachedasynchookcontract.html">InfiniteCachedAsyncHookContract</a>.<a href="pagination.infinitecachedasynchookcontract.html#data">data</a></p>
+						<p>Inherited from <a href="hooks.cachedasynchookcontract.html">CachedAsyncHookContract</a>.<a href="hooks.cachedasynchookcontract.html#data">data</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L94">src/hooks.ts:94</a></li>
 						</ul>
@@ -147,7 +151,7 @@
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> error</h3>
 					<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <a href="../classes/errors.apierror.html" class="tsd-signature-type" data-tsd-kind="Class">ApiError</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Error</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="pagination.infinitecachedasynchookcontract.html">InfiniteCachedAsyncHookContract</a>.<a href="pagination.infinitecachedasynchookcontract.html#error">error</a></p>
+						<p>Inherited from <a href="hooks.cachedasynchookcontract.html">CachedAsyncHookContract</a>.<a href="hooks.cachedasynchookcontract.html#error">error</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L95">src/hooks.ts:95</a></li>
 						</ul>
@@ -158,7 +162,7 @@
 					<h3>is<wbr>Validating</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Validating<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="pagination.infinitecachedasynchookcontract.html">InfiniteCachedAsyncHookContract</a>.<a href="pagination.infinitecachedasynchookcontract.html#isvalidating">isValidating</a></p>
+						<p>Inherited from <a href="hooks.cachedasynchookcontract.html">CachedAsyncHookContract</a>.<a href="hooks.cachedasynchookcontract.html#isvalidating">isValidating</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L97">src/hooks.ts:97</a></li>
 						</ul>
@@ -169,7 +173,7 @@
 					<h3>mutate</h3>
 					<div class="tsd-signature tsd-kind-icon">mutate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, shouldRevalidate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="pagination.infinitecachedasynchookcontract.html">InfiniteCachedAsyncHookContract</a>.<a href="pagination.infinitecachedasynchookcontract.html#mutate">mutate</a></p>
+						<p>Inherited from <a href="hooks.cachedasynchookcontract.html">CachedAsyncHookContract</a>.<a href="hooks.cachedasynchookcontract.html#mutate">mutate</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/hooks.ts#L96">src/hooks.ts:96</a></li>
 						</ul>
@@ -200,21 +204,10 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="pagination" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> pagination</h3>
-					<div class="tsd-signature tsd-kind-icon">pagination<span class="tsd-signature-symbol">:</span> <a href="pagination.paginationmeta.html" class="tsd-signature-type" data-tsd-kind="Interface">PaginationMeta</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/pagination.ts#L18">src/pagination.ts:18</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="setsize" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> set<wbr>Size</h3>
 					<div class="tsd-signature tsd-kind-icon">set<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="pagination.infinitecachedasynchookcontract.html">InfiniteCachedAsyncHookContract</a>.<a href="pagination.infinitecachedasynchookcontract.html#setsize">setSize</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/pagination.ts#L36">src/pagination.ts:36</a></li>
 						</ul>
@@ -241,12 +234,11 @@
 						</ul>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="size" class="tsd-anchor"></a>
 					<h3>size</h3>
 					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="pagination.infinitecachedasynchookcontract.html">InfiniteCachedAsyncHookContract</a>.<a href="pagination.infinitecachedasynchookcontract.html#size">size</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/pagination.ts#L35">src/pagination.ts:35</a></li>
 						</ul>
@@ -336,39 +328,36 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="pagination.infinitecachedasynchookcontract.html" class="tsd-kind-icon">Infinite<wbr>Cached<wbr>Async<wbr>Hook<wbr>Contract</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="pagination.paginatedcachedasynchookcontract.html" class="tsd-kind-icon">Paginated<wbr>Cached<wbr>Async<wbr>Hook<wbr>Contract</a>
+						<a href="pagination.infinitecachedasynchookcontract.html" class="tsd-kind-icon">Infinite<wbr>Cached<wbr>Async<wbr>Hook<wbr>Contract</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="pagination.paginatedcachedasynchookcontract.html#data" class="tsd-kind-icon">data</a>
+								<a href="pagination.infinitecachedasynchookcontract.html#data" class="tsd-kind-icon">data</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="pagination.paginatedcachedasynchookcontract.html#error" class="tsd-kind-icon">error</a>
+								<a href="pagination.infinitecachedasynchookcontract.html#error" class="tsd-kind-icon">error</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="pagination.paginatedcachedasynchookcontract.html#isvalidating" class="tsd-kind-icon">is<wbr>Validating</a>
+								<a href="pagination.infinitecachedasynchookcontract.html#isvalidating" class="tsd-kind-icon">is<wbr>Validating</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="pagination.paginatedcachedasynchookcontract.html#mutate" class="tsd-kind-icon">mutate</a>
+								<a href="pagination.infinitecachedasynchookcontract.html#mutate" class="tsd-kind-icon">mutate</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.paginatedcachedasynchookcontract.html#pagination" class="tsd-kind-icon">pagination</a>
+								<a href="pagination.infinitecachedasynchookcontract.html#setsize" class="tsd-kind-icon">set<wbr>Size</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="pagination.paginatedcachedasynchookcontract.html#setsize" class="tsd-kind-icon">set<wbr>Size</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="pagination.paginatedcachedasynchookcontract.html#size" class="tsd-kind-icon">size</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="pagination.infinitecachedasynchookcontract.html#size" class="tsd-kind-icon">size</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="pagination.paginatedcachedasynchookcontract.html" class="tsd-kind-icon">Paginated<wbr>Cached<wbr>Async<wbr>Hook<wbr>Contract</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="pagination.paginationmeta.html" class="tsd-kind-icon">Pagination<wbr>Meta</a>
 					</li>
