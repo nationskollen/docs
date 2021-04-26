@@ -74,6 +74,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils.html#createuploadbody" class="tsd-kind-icon">create<wbr>Upload<wbr>Body</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils.html#extractsingleresource" class="tsd-kind-icon">extract<wbr>Single<wbr>Resource</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils.html#removecallback" class="tsd-kind-icon">remove<wbr>Callback</a></li>
 							</ul>
 						</section>
@@ -92,7 +93,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/utils.ts#L10">src/utils.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/6d56976/src/utils.ts#L13">src/utils.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -106,6 +107,59 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="extractsingleresource" class="tsd-anchor"></a>
+					<h3>extract<wbr>Single<wbr>Resource</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">extract<wbr>Single<wbr>Resource&lt;R, T, K&gt;<span class="tsd-signature-symbol">(</span>hookData<span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, extractKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, searchValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/hooks.extractedcachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">ExtractedCachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/6d56976/src/utils.ts#L38">src/utils.ts:38</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Extracts a single resource from a resource collection, i.e. a <a href="responses.html#nationcollection">NationCollection</a>.
+										This allows us to maximize the use of the cached requests made by SWR.
+										Instead of fetching the resources again, separately, we fetch the entire collection
+									once and extracts the resource that we want from the array.</p>
+								</div>
+								<p>This also comes with the benefit of automatically invalidating data
+									that uses single resources. Without this, invalidating the entire collection
+									would not automatically invalidate the single resource, since it was fetched
+								using a unique key.</p>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>R</h4>
+								</li>
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span></h4>
+								</li>
+								<li>
+									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>hookData: <a href="../interfaces/hooks.cachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">CachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>extractKey: <span class="tsd-signature-type">K</span></h5>
+								</li>
+								<li>
+									<h5>searchValue: <span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/hooks.extractedcachedasynchookcontract.html" class="tsd-signature-type" data-tsd-kind="Interface">ExtractedCachedAsyncHookContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 					<a name="removecallback" class="tsd-anchor"></a>
 					<h3>remove<wbr>Callback</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
@@ -115,7 +169,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/c07ad39/src/utils.ts#L1">src/utils.ts:1</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/6d56976/src/utils.ts#L4">src/utils.ts:4</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -223,6 +277,9 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="utils.html#createuploadbody" class="tsd-kind-icon">create<wbr>Upload<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="utils.html#extractsingleresource" class="tsd-kind-icon">extract<wbr>Single<wbr>Resource</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="utils.html#removecallback" class="tsd-kind-icon">remove<wbr>Callback</a>

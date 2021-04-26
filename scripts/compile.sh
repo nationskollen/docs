@@ -27,6 +27,7 @@ function generate_and_copy() {
 generate_and_copy "../sdk" "docs" "sdk" "docs"
 generate_and_copy "../server" "docs" "server" "docs"
 generate_and_copy "../server" "docs-api" "api" "docs:api"
+generate_and_copy "../mobile" "docs" "mobile" "docs"
 
 # Insomnia documenter expects the config to be located at
 # the root of the webserver.
