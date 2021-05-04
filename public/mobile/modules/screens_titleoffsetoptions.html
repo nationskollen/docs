@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Menu | @dsp-krabby/mobile</title>
+	<title>screens/TitleOffsetOptions | @dsp-krabby/mobile</title>
 	<meta name="description" content="Documentation for @dsp-krabby/mobile">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,71 +56,75 @@
 					<a href="../modules.html">@dsp-krabby/mobile</a>
 				</li>
 				<li>
-					<a href="menu.html">Menu</a>
+					<a href="screens_titleoffsetoptions.html">screens/TitleOffsetOptions</a>
 				</li>
 			</ul>
-			<h1>Module Menu</h1>
+			<h1>Module screens/TitleOffsetOptions</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>This component renders a menu and shows it using <a href="dropdown.html">Dropdown</a>.</p>
-					</div>
-					<dl class="tsd-comment-tags">
-						<dt>param</dt>
-						<dd></dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
+							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/menu.menuitemlistprops.html" class="tsd-kind-icon">Menu<wbr>Item<wbr>List<wbr>Props</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/menu.props.html" class="tsd-kind-icon">Props</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="menu.html#default" class="tsd-kind-icon">default</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="screens_titleoffsetoptions.html#title_left_offset" class="tsd-kind-icon">TITLE_<wbr>LEFT_<wbr>OFFSET</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="screens_titleoffsetoptions.html#default" class="tsd-kind-icon">default</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="title_left_offset" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> TITLE_<wbr>LEFT_<wbr>OFFSET</h3>
+					<div class="tsd-signature tsd-kind-icon">TITLE_<wbr>LEFT_<wbr>OFFSET<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">60</span><span class="tsd-signature-symbol"> = 60</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dsp-krabby/mobile/blob/e1056bbb/screens/TitleOffsetOptions.ts#L12">screens/TitleOffsetOptions.ts:12</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Fixes the &quot;bug&quot; where the title of screens with a back arrow
+								would have a large gap between the title and back arrow.
+								This is fixed by manually setting the left side offset of the
+							title container and must be set on ALL screens that has a back arrow.</p>
+						</div>
+						<p>I.e.:</p>
+						<pre><code class="language-jsx"><span style="color: #E1E4E8">&lt;Stack.Screen ... options={..., ...TitleOffsetOptions} /&gt;</span>
+</code></pre>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="default" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> default</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">default<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><a href="../interfaces/menu.props.html" class="tsd-signature-type" data-tsd-kind="Interface">Props</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/mobile/blob/1f9f656c/components/Nations/Menu.tsx#L73">components/Nations/Menu.tsx:73</a></li>
+					<div class="tsd-signature tsd-kind-icon">default<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>headerTitleContainerStyle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dsp-krabby/mobile/blob/e1056bbb/screens/TitleOffsetOptions.ts#L14">screens/TitleOffsetOptions.ts:14</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>header<wbr>Title<wbr>Container<wbr>Style<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
 								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>__namedParameters: <a href="../interfaces/menu.props.html" class="tsd-signature-type" data-tsd-kind="Interface">Props</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
-						</li>
-					</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -131,20 +135,17 @@
 						<a href="../modules.html">Modules</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="menu.html">Menu</a>
+						<a href="screens_titleoffsetoptions.html">screens/<wbr>Title<wbr>Offset<wbr>Options</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/menu.menuitemlistprops.html" class="tsd-kind-icon">Menu<wbr>Item<wbr>List<wbr>Props</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="screens_titleoffsetoptions.html#title_left_offset" class="tsd-kind-icon">TITLE_<wbr>LEFT_<wbr>OFFSET</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/menu.props.html" class="tsd-kind-icon">Props</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="menu.html#default" class="tsd-kind-icon">default</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="screens_titleoffsetoptions.html#default" class="tsd-kind-icon">default</a>
 					</li>
 				</ul>
 			</nav>
@@ -158,10 +159,12 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
 			</ul>
 		</div>
 	</div>
