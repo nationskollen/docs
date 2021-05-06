@@ -56,10 +56,10 @@
 					<a href="../modules.html">@dsp-krabby/mobile</a>
 				</li>
 				<li>
-					<a href="../modules/components_contentcontainer.html">components/ContentContainer</a>
+					<a href="../modules/components_common_searchbar.html">components/Common/SearchBar</a>
 				</li>
 				<li>
-					<a href="components_contentcontainer.props.html">Props</a>
+					<a href="components_common_searchbar.props.html">Props</a>
 				</li>
 			</ul>
 			<h1>Interface Props</h1>
@@ -84,10 +84,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="components_contentcontainer.props.html#children" class="tsd-kind-icon">children</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="components_contentcontainer.props.html#direction" class="tsd-kind-icon">direction</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="components_contentcontainer.props.html#nopaddingtop" class="tsd-kind-icon">no<wbr>Padding<wbr>Top</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="components_contentcontainer.props.html#style" class="tsd-kind-icon">style</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="components_common_searchbar.props.html#autofocus" class="tsd-kind-icon">auto<wbr>Focus</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="components_common_searchbar.props.html#delay" class="tsd-kind-icon">delay</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="components_common_searchbar.props.html#onsearch" class="tsd-kind-icon">on<wbr>Search</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="components_common_searchbar.props.html#placeholder" class="tsd-kind-icon">placeholder</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,42 +96,63 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="children" class="tsd-anchor"></a>
-					<h3>children</h3>
-					<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="autofocus" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> auto<wbr>Focus</h3>
+					<div class="tsd-signature tsd-kind-icon">auto<wbr>Focus<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/mobile/blob/e1056bbb/components/ContentContainer.tsx#L5">components/ContentContainer.tsx:5</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/mobile/blob/81d056bd/components/Common/SearchBar.tsx#L15">components/Common/SearchBar.tsx:15</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="direction" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> direction</h3>
-					<div class="tsd-signature tsd-kind-icon">direction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;row&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;column&quot;</span></div>
+					<a name="delay" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> delay</h3>
+					<div class="tsd-signature tsd-kind-icon">delay<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/mobile/blob/e1056bbb/components/ContentContainer.tsx#L6">components/ContentContainer.tsx:6</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/mobile/blob/81d056bd/components/Common/SearchBar.tsx#L16">components/Common/SearchBar.tsx:16</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="nopaddingtop" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> no<wbr>Padding<wbr>Top</h3>
-					<div class="tsd-signature tsd-kind-icon">no<wbr>Padding<wbr>Top<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="onsearch" class="tsd-anchor"></a>
+					<h3>on<wbr>Search</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Search<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/mobile/blob/e1056bbb/components/ContentContainer.tsx#L7">components/ContentContainer.tsx:7</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/mobile/blob/81d056bd/components/Common/SearchBar.tsx#L13">components/Common/SearchBar.tsx:13</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-interface">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>query: <span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="style" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> style</h3>
-					<div class="tsd-signature tsd-kind-icon">style<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ViewStyle</span></div>
+					<a name="placeholder" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> placeholder</h3>
+					<div class="tsd-signature tsd-kind-icon">placeholder<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/mobile/blob/e1056bbb/components/ContentContainer.tsx#L8">components/ContentContainer.tsx:8</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/mobile/blob/81d056bd/components/Common/SearchBar.tsx#L14">components/Common/SearchBar.tsx:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -144,7 +165,7 @@
 						<a href="../modules.html">Modules</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/components_contentcontainer.html">components/<wbr>Content<wbr>Container</a>
+						<a href="../modules/components_common_searchbar.html">components/<wbr>Common/<wbr>Search<wbr>Bar</a>
 					</li>
 				</ul>
 			</nav>
@@ -153,26 +174,29 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="components_contentcontainer.props.html" class="tsd-kind-icon">Props</a>
+						<a href="components_common_searchbar.props.html" class="tsd-kind-icon">Props</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="components_contentcontainer.props.html#children" class="tsd-kind-icon">children</a>
+								<a href="components_common_searchbar.props.html#autofocus" class="tsd-kind-icon">auto<wbr>Focus</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="components_contentcontainer.props.html#direction" class="tsd-kind-icon">direction</a>
+								<a href="components_common_searchbar.props.html#delay" class="tsd-kind-icon">delay</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="components_contentcontainer.props.html#nopaddingtop" class="tsd-kind-icon">no<wbr>Padding<wbr>Top</a>
+								<a href="components_common_searchbar.props.html#onsearch" class="tsd-kind-icon">on<wbr>Search</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="components_contentcontainer.props.html#style" class="tsd-kind-icon">style</a>
+								<a href="components_common_searchbar.props.html#placeholder" class="tsd-kind-icon">placeholder</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="../modules/components_common_searchbar.html#default_debounce_delay" class="tsd-kind-icon">DEFAULT_<wbr>DEBOUNCE_<wbr>DELAY</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/components_contentcontainer.html#default" class="tsd-kind-icon">default</a>
+						<a href="../modules/components_common_searchbar.html#default" class="tsd-kind-icon">default</a>
 					</li>
 				</ul>
 			</nav>
