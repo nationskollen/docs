@@ -1,9 +1,9 @@
 {
-    "name": "@dsp-krabby/docs",
+    "name": "@nationskollen/docs",
     "version": "1.0.0",
     "description": "Nationskollen documentation",
-    "repository": "git://github.com/dsp-krabby/docs.git",
-    "author": "Team Krabby",
+    "repository": "git://github.com/nationskollen/docs.git",
+    "author": "Nationskollen",
     "license": "MIT",
     "scripts": {
         "compile": "./scripts/compile.sh",
