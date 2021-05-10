@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>default | @dsp-krabby/server</title>
-	<meta name="description" content="Documentation for @dsp-krabby/server">
+	<title>default | @nationskollen/server</title>
+	<meta name="description" content="Documentation for @nationskollen/server">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 	<link rel="stylesheet" href="../assets/css/overrides.css">
@@ -24,7 +24,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@dsp-krabby/server</a>
+					<a href="../index.html" class="title">@nationskollen/server</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -51,7 +51,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../modules.html">@dsp-krabby/server</a>
+					<a href="../modules.html">@nationskollen/server</a>
 				</li>
 				<li>
 					<a href="../modules/event.html">Event</a>
@@ -104,6 +104,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="event.default.html#longdescription" class="tsd-kind-icon">long<wbr>Description</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="event.default.html#name" class="tsd-kind-icon">name</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="event.default.html#nationid" class="tsd-kind-icon">nation<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="event.default.html#notificationid" class="tsd-kind-icon">notification<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="event.default.html#occursat" class="tsd-kind-icon">occurs<wbr>At</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="event.default.html#onlymembers" class="tsd-kind-icon">only<wbr>Members</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="event.default.html#onlystudents" class="tsd-kind-icon">only<wbr>Students</a></li>
@@ -115,6 +116,12 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="event.default.html#inorder" class="tsd-kind-icon">in<wbr>Order</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="event.default.html#ondate" class="tsd-kind-icon">on<wbr>Date</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="event.default.html#percategory" class="tsd-kind-icon">per<wbr>Category</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="event.default.html#createnotification" class="tsd-kind-icon">create<wbr>Notification</a></li>
 							</ul>
 						</section>
 					</div>
@@ -149,7 +156,7 @@
 					<div class="tsd-signature tsd-kind-icon">category<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BelongsTo</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><a href="category.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">LucidModel</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L73">app/Models/Event.ts:73</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L141">app/Models/Event.ts:141</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -164,9 +171,14 @@
 					<div class="tsd-signature tsd-kind-icon">category<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L67">app/Models/Event.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L126">app/Models/Event.ts:126</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the id associated with the category model</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="coverimgsrc" class="tsd-anchor"></a>
@@ -174,7 +186,7 @@
 					<div class="tsd-signature tsd-kind-icon">cover<wbr>Img<wbr>Src<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L90">app/Models/Event.ts:90</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L158">app/Models/Event.ts:158</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -189,7 +201,7 @@
 					<div class="tsd-signature tsd-kind-icon">created<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DateTime</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L114">app/Models/Event.ts:114</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L182">app/Models/Event.ts:182</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -204,7 +216,7 @@
 					<div class="tsd-signature tsd-kind-icon">ends<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DateTime</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L102">app/Models/Event.ts:102</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L170">app/Models/Event.ts:170</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -219,7 +231,7 @@
 					<div class="tsd-signature tsd-kind-icon">icon<wbr>Img<wbr>Src<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L84">app/Models/Event.ts:84</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L152">app/Models/Event.ts:152</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -236,7 +248,7 @@
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L21">app/Models/Event.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L77">app/Models/Event.ts:77</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -251,7 +263,7 @@
 					<div class="tsd-signature tsd-kind-icon">location<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L52">app/Models/Event.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L108">app/Models/Event.ts:108</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -266,7 +278,7 @@
 					<div class="tsd-signature tsd-kind-icon">long<wbr>Description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L46">app/Models/Event.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L102">app/Models/Event.ts:102</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -282,7 +294,7 @@
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L33">app/Models/Event.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L89">app/Models/Event.ts:89</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -297,7 +309,7 @@
 					<div class="tsd-signature tsd-kind-icon">nation<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L27">app/Models/Event.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L83">app/Models/Event.ts:83</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -307,12 +319,34 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="notificationid" class="tsd-anchor"></a>
+					<h3>notification<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">notification<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L135">app/Models/Event.ts:135</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The id related to a notification that is created alongside the event</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>todo</dt>
+							<dd><p>add this as a <code>serializeAs: null</code> when sure that things work. for
+									now it is present in the response in order to test that notifications
+								are created and such</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="occursat" class="tsd-anchor"></a>
 					<h3>occurs<wbr>At</h3>
 					<div class="tsd-signature tsd-kind-icon">occurs<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DateTime</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L96">app/Models/Event.ts:96</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L164">app/Models/Event.ts:164</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -327,7 +361,7 @@
 					<div class="tsd-signature tsd-kind-icon">only<wbr>Members<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L58">app/Models/Event.ts:58</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L114">app/Models/Event.ts:114</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -342,7 +376,7 @@
 					<div class="tsd-signature tsd-kind-icon">only<wbr>Students<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L64">app/Models/Event.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L120">app/Models/Event.ts:120</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -357,7 +391,7 @@
 					<div class="tsd-signature tsd-kind-icon">short<wbr>Description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L39">app/Models/Event.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L95">app/Models/Event.ts:95</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -372,7 +406,7 @@
 					<div class="tsd-signature tsd-kind-icon">updated<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DateTime</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L108">app/Models/Event.ts:108</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L176">app/Models/Event.ts:176</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -387,7 +421,7 @@
 					<div class="tsd-signature tsd-kind-icon">after<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">QueryScope</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ModelQueryBuilderContract</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">LucidModel</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">LucidRow</span><span class="tsd-signature-symbol">&gt;</span>, date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DateTime</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L126">app/Models/Event.ts:126</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L30">app/Models/Event.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -402,7 +436,7 @@
 					<div class="tsd-signature tsd-kind-icon">before<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">QueryScope</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ModelQueryBuilderContract</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">LucidModel</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">LucidRow</span><span class="tsd-signature-symbol">&gt;</span>, date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DateTime</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L119">app/Models/Event.ts:119</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L23">app/Models/Event.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -417,7 +451,7 @@
 					<div class="tsd-signature tsd-kind-icon">filter<wbr>Out<wbr>Oids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">QueryScope</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ModelQueryBuilderContract</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">LucidModel</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">LucidRow</span><span class="tsd-signature-symbol">&gt;</span>, oids<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L163">app/Models/Event.ts:163</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L67">app/Models/Event.ts:67</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -437,7 +471,7 @@
 					<div class="tsd-signature tsd-kind-icon">in<wbr>Order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">QueryScope</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ModelQueryBuilderContract</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">LucidModel</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">LucidRow</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L147">app/Models/Event.ts:147</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L51">app/Models/Event.ts:51</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -452,7 +486,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">QueryScope</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ModelQueryBuilderContract</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">LucidModel</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">LucidRow</span><span class="tsd-signature-symbol">&gt;</span>, date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DateTime</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L137">app/Models/Event.ts:137</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L41">app/Models/Event.ts:41</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -467,7 +501,7 @@
 					<div class="tsd-signature tsd-kind-icon">per<wbr>Category<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">QueryScope</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ModelQueryBuilderContract</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">LucidModel</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">LucidRow</span><span class="tsd-signature-symbol">&gt;</span>, categoryId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Models/Event.ts#L155">app/Models/Event.ts:155</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L59">app/Models/Event.ts:59</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -480,6 +514,31 @@
 							</dd>
 						</dl>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="createnotification" class="tsd-anchor"></a>
+					<h3>create<wbr>Notification</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Notification<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Models/Event.ts#L187">app/Models/Event.ts:187</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new notification for the event model.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -538,6 +597,9 @@
 								<a href="event.default.html#nationid" class="tsd-kind-icon">nation<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="event.default.html#notificationid" class="tsd-kind-icon">notification<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="event.default.html#occursat" class="tsd-kind-icon">occurs<wbr>At</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -570,6 +632,9 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
 								<a href="event.default.html#percategory" class="tsd-kind-icon">per<wbr>Category</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="event.default.html#createnotification" class="tsd-kind-icon">create<wbr>Notification</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -587,10 +652,12 @@
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

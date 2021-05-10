@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Request | @dsp-krabby/server</title>
-	<meta name="description" content="Documentation for @dsp-krabby/server">
+	<title>Request | @nationskollen/server</title>
+	<meta name="description" content="Documentation for @nationskollen/server">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 	<link rel="stylesheet" href="../assets/css/overrides.css">
@@ -24,7 +24,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@dsp-krabby/server</a>
+					<a href="../index.html" class="title">@nationskollen/server</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -51,7 +51,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../modules.html">@dsp-krabby/server</a>
+					<a href="../modules.html">@nationskollen/server</a>
 				</li>
 				<li>
 					<a href="request.html">Request</a>
@@ -82,11 +82,14 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="request.html#getevent" class="tsd-kind-icon">get<wbr>Event</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="request.html#getindividual" class="tsd-kind-icon">get<wbr>Individual</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="request.html#getlocation" class="tsd-kind-icon">get<wbr>Location</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="request.html#getmenu" class="tsd-kind-icon">get<wbr>Menu</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="request.html#getmenuitem" class="tsd-kind-icon">get<wbr>Menu<wbr>Item</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="request.html#getnation" class="tsd-kind-icon">get<wbr>Nation</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="request.html#getnotification" class="tsd-kind-icon">get<wbr>Notification</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="request.html#getopeninghour" class="tsd-kind-icon">get<wbr>Opening<wbr>Hour</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="request.html#getsubscription" class="tsd-kind-icon">get<wbr>Subscription</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="request.html#getvalidateddata" class="tsd-kind-icon">get<wbr>Validated<wbr>Data</a></li>
 							</ul>
 						</section>
@@ -105,7 +108,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Utils/Request.ts#L77">app/Utils/Request.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Utils/Request.ts#L93">app/Utils/Request.ts:93</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -119,6 +122,29 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getindividual" class="tsd-anchor"></a>
+					<h3>get<wbr>Individual</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Individual<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestContract</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/app_models_individual.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Utils/Request.ts#L53">app/Utils/Request.ts:53</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>request: <span class="tsd-signature-type">RequestContract</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/app_models_individual.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="getlocation" class="tsd-anchor"></a>
 					<h3>get<wbr>Location</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -128,7 +154,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Utils/Request.ts#L27">app/Utils/Request.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Utils/Request.ts#L33">app/Utils/Request.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -151,7 +177,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Utils/Request.ts#L57">app/Utils/Request.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Utils/Request.ts#L73">app/Utils/Request.ts:73</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -174,7 +200,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Utils/Request.ts#L67">app/Utils/Request.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Utils/Request.ts#L83">app/Utils/Request.ts:83</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -197,7 +223,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Utils/Request.ts#L37">app/Utils/Request.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Utils/Request.ts#L43">app/Utils/Request.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -211,6 +237,29 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getnotification" class="tsd-anchor"></a>
+					<h3>get<wbr>Notification</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Notification<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestContract</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/app_models_notification.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Utils/Request.ts#L113">app/Utils/Request.ts:113</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>request: <span class="tsd-signature-type">RequestContract</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/app_models_notification.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="getopeninghour" class="tsd-anchor"></a>
 					<h3>get<wbr>Opening<wbr>Hour</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -220,7 +269,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Utils/Request.ts#L47">app/Utils/Request.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Utils/Request.ts#L63">app/Utils/Request.ts:63</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -230,6 +279,29 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../classes/openinghour.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="getsubscription" class="tsd-anchor"></a>
+					<h3>get<wbr>Subscription</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Subscription<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestContract</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/subscription.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Utils/Request.ts#L103">app/Utils/Request.ts:103</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>request: <span class="tsd-signature-type">RequestContract</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/subscription.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -243,7 +315,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/133cfac/app/Utils/Request.ts#L87">app/Utils/Request.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/dsp-krabby/server/blob/2a1fe31/app/Utils/Request.ts#L123">app/Utils/Request.ts:123</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -287,6 +359,9 @@
 						<a href="request.html#getevent" class="tsd-kind-icon">get<wbr>Event</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="request.html#getindividual" class="tsd-kind-icon">get<wbr>Individual</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="request.html#getlocation" class="tsd-kind-icon">get<wbr>Location</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
@@ -299,7 +374,13 @@
 						<a href="request.html#getnation" class="tsd-kind-icon">get<wbr>Nation</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="request.html#getnotification" class="tsd-kind-icon">get<wbr>Notification</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="request.html#getopeninghour" class="tsd-kind-icon">get<wbr>Opening<wbr>Hour</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="request.html#getsubscription" class="tsd-kind-icon">get<wbr>Subscription</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="request.html#getvalidateddata" class="tsd-kind-icon">get<wbr>Validated<wbr>Data</a>
@@ -317,6 +398,7 @@
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
