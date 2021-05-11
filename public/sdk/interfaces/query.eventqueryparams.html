@@ -85,15 +85,6 @@
 					<p>Note that <code>excludeOids</code> will not have any effect if <code>oid</code> (first parameter) is set.</p>
 					<dl class="tsd-comment-tags">
 						<dt>example</dt>
-						<dd><p>Fetch events for a single nation</p>
-							<pre><code class="language-javascript"><span style="color: #6A737D">// Fetches events that is created by nation with oid 400</span>
-<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">400</span><span style="color: #E1E4E8">)</span>
-
-<span style="color: #6A737D">// Of course, you may still specify query parameters:</span>
-<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">400</span><span style="color: #E1E4E8">, { page: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, amount: </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, after: </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Date</span><span style="color: #E1E4E8">() })</span>
-</code></pre>
-						</dd>
-						<dt>example</dt>
 						<dd><p>Fetching events that occurs on a date</p>
 							<pre><code class="language-javascript"><span style="color: #6A737D">// Fetch all events that occurs today.</span>
 <span style="color: #6A737D">// Note that the date will be automatically converted into the</span>
@@ -108,9 +99,41 @@
 </code></pre>
 						</dd>
 						<dt>example</dt>
-						<dd><p>Exclude events from selected nations</p>
-							<pre><code class="language-javascript"><span style="color: #6A737D">// Fetches events that is not created by the nations with oid 400 and 405</span>
-<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, { after: </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Date</span><span style="color: #E1E4E8">(), excludeOids: [</span><span style="color: #79B8FF">400</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">405</span><span style="color: #E1E4E8">] })</span>
+						<dd><p>Fetch events for a single nation</p>
+							<pre><code class="language-javascript"><span style="color: #6A737D">// Fetches events that is created by nation with oid 400</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">400</span><span style="color: #E1E4E8">)</span>
+
+<span style="color: #6A737D">// Of course, you may still specify query parameters:</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">400</span><span style="color: #E1E4E8">, { page: </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, amount: </span><span style="color: #79B8FF">5</span><span style="color: #E1E4E8">, after: </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Date</span><span style="color: #E1E4E8">() })</span>
+</code></pre>
+						</dd>
+						<dt>example</dt>
+						<dd><p>Passing in the selected nation as a state variable (or prop)
+								const [oid, setOid] = useState(null)
+							const { data } = useEvent(oid, { date: new Date() })</p>
+							<pre><code>
+<span style="color: #E1E4E8">@example Exclude events from selected nations</span>
+<span style="color: #9ECBFF">```javascript</span>
+<span style="color: #9ECBFF">// Fetches events that is not created by the nations with oid 400 and 405</span>
+<span style="color: #9ECBFF">const { data } = useEvents(null, { after: new Date(), excludeOids: [400, 405] })</span>
+</code></pre>
+							<p>@example Exclude events with selected categories</p>
+							<pre><code class="language-javascript"><span style="color: #6A737D">// Fetches events that is not of categories with ids 1, 2 or 3</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, { excludeCategories: [</span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">2</span><span style="color: #E1E4E8">, </span><span style="color: #79B8FF">3</span><span style="color: #E1E4E8">] })</span>
+</code></pre>
+							<p>@example Fetch events for single category</p>
+							<pre><code class="language-javascript"><span style="color: #6A737D">// Fetches events that has category with id 1</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, { category: </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8"> })</span>
+</code></pre>
+							<p>@example Fetch events that is only open for students</p>
+							<pre><code class="language-javascript"><span style="color: #6A737D">// You can also set it to false to only include events that</span>
+<span style="color: #6A737D">// does not require you to be a student.</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, { onlyStudents: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8"> })</span>
+</code></pre>
+							<p>@example Fetch events that is only open if you are a member of the nation</p>
+							<pre><code class="language-javascript"><span style="color: #6A737D">// You can also set it to false to only include events that</span>
+<span style="color: #6A737D">// does not require you to be a member of the nation</span>
+<span style="color: #F97583">const</span><span style="color: #E1E4E8"> { </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> } </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">useEvents</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">null</span><span style="color: #E1E4E8">, { onlyMembers: </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8"> })</span>
 </code></pre>
 						</dd>
 					</dl>
@@ -139,8 +162,12 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="query.eventqueryparams.html#after" class="tsd-kind-icon">after</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="query.eventqueryparams.html#amount" class="tsd-kind-icon">amount</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="query.eventqueryparams.html#before" class="tsd-kind-icon">before</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="query.eventqueryparams.html#category" class="tsd-kind-icon">category</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="query.eventqueryparams.html#date" class="tsd-kind-icon">date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="query.eventqueryparams.html#excludecategories" class="tsd-kind-icon">exclude<wbr>Categories</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="query.eventqueryparams.html#excludeoids" class="tsd-kind-icon">exclude<wbr>Oids</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="query.eventqueryparams.html#onlymembers" class="tsd-kind-icon">only<wbr>Members</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="query.eventqueryparams.html#onlystudents" class="tsd-kind-icon">only<wbr>Students</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="query.eventqueryparams.html#page" class="tsd-kind-icon">page</a></li>
 							</ul>
 						</section>
@@ -155,7 +182,7 @@
 					<div class="tsd-signature tsd-kind-icon">after<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/bf7b053/src/query.ts#L62">src/query.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/759ed12/src/query.ts#L93">src/query.ts:93</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -166,7 +193,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="query.paginationqueryparams.html">PaginationQueryParams</a>.<a href="query.paginationqueryparams.html#amount">amount</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/bf7b053/src/query.ts#L12">src/query.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/759ed12/src/query.ts#L12">src/query.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -176,7 +203,17 @@
 					<div class="tsd-signature tsd-kind-icon">before<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/bf7b053/src/query.ts#L61">src/query.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/759ed12/src/query.ts#L92">src/query.ts:92</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="category" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> category</h3>
+					<div class="tsd-signature tsd-kind-icon">category<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/759ed12/src/query.ts#L94">src/query.ts:94</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -186,7 +223,17 @@
 					<div class="tsd-signature tsd-kind-icon">date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/bf7b053/src/query.ts#L60">src/query.ts:60</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/759ed12/src/query.ts#L91">src/query.ts:91</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="excludecategories" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> exclude<wbr>Categories</h3>
+					<div class="tsd-signature tsd-kind-icon">exclude<wbr>Categories<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/759ed12/src/query.ts#L96">src/query.ts:96</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -196,7 +243,27 @@
 					<div class="tsd-signature tsd-kind-icon">exclude<wbr>Oids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/bf7b053/src/query.ts#L63">src/query.ts:63</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/759ed12/src/query.ts#L95">src/query.ts:95</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="onlymembers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> only<wbr>Members</h3>
+					<div class="tsd-signature tsd-kind-icon">only<wbr>Members<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/759ed12/src/query.ts#L98">src/query.ts:98</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="onlystudents" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> only<wbr>Students</h3>
+					<div class="tsd-signature tsd-kind-icon">only<wbr>Students<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/759ed12/src/query.ts#L97">src/query.ts:97</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -207,7 +274,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="query.paginationqueryparams.html">PaginationQueryParams</a>.<a href="query.paginationqueryparams.html#page">page</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/bf7b053/src/query.ts#L11">src/query.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/dsp-krabby/sdk/blob/759ed12/src/query.ts#L11">src/query.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -219,80 +286,8 @@
 					<li class=" ">
 						<a href="../modules.html">Modules</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/client.html">client</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/connection.html">connection</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/constants.html">constants</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/context.html">context</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/errors.html">errors</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hooks.html">hooks</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/index.html">index</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/pagination.html">pagination</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/provider.html">provider</a>
-					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/query.html">query</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/responses.html">responses</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services.html">services</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_activity.html">services/activity</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_auth.html">services/auth</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_base.html">services/base</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_events.html">services/events</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_locations.html">services/locations</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_menu_items.html">services/menu-<wbr>items</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_menus.html">services/menus</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_nations.html">services/nations</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_opening_hours.html">services/opening-<wbr>hours</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/services_subscriptions.html">services/subscriptions</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/typings.html">typings</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/utils.html">utils</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/websockets.html">websockets</a>
 					</li>
 				</ul>
 			</nav>
@@ -313,10 +308,22 @@
 								<a href="query.eventqueryparams.html#before" class="tsd-kind-icon">before</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="query.eventqueryparams.html#category" class="tsd-kind-icon">category</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="query.eventqueryparams.html#date" class="tsd-kind-icon">date</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="query.eventqueryparams.html#excludecategories" class="tsd-kind-icon">exclude<wbr>Categories</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="query.eventqueryparams.html#excludeoids" class="tsd-kind-icon">exclude<wbr>Oids</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="query.eventqueryparams.html#onlymembers" class="tsd-kind-icon">only<wbr>Members</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="query.eventqueryparams.html#onlystudents" class="tsd-kind-icon">only<wbr>Students</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="query.eventqueryparams.html#page" class="tsd-kind-icon">page</a>
