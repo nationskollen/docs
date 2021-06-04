@@ -4,7 +4,8 @@ and documentation related to code and structure.
 
 ## setup
 In order to compile you need to have the `mobile`, `sdk`, `server` and `web` repositories in the same parent directory as the `docs` repository.
-Also follow the sdk setup and installation guide to install the necessary dependencies.
+Also follow the [sdk](https://github.com/nationskollen/sdk#readme) setup and installation guide to install the necessary dependencies.
+
 
 ## Commands
 - `npm run compile` - Compiles the documentation for every projects into `public/`
